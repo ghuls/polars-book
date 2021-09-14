@@ -1,0 +1,1096 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js ayu">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>io - Polars - Python Reference Guide</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../theme/css/style.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../polars.html">polars</a></li><li class="chapter-item "><a href="../polars/cfg.html">cfg</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/cfg/Config.html">Config</a></li></ol></li><li class="chapter-item "><a href="../polars/convert.html">convert</a></li><li class="chapter-item "><a href="../polars/datatypes.html">datatypes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/datatypes/DataType.html">DataType</a></li><li class="chapter-item "><a href="../polars/datatypes/Int8.html">Int8</a></li><li class="chapter-item "><a href="../polars/datatypes/Int16.html">Int16</a></li><li class="chapter-item "><a href="../polars/datatypes/Int32.html">Int32</a></li><li class="chapter-item "><a href="../polars/datatypes/Int64.html">Int64</a></li><li class="chapter-item "><a href="../polars/datatypes/UInt8.html">UInt8</a></li><li class="chapter-item "><a href="../polars/datatypes/UInt16.html">UInt16</a></li><li class="chapter-item "><a href="../polars/datatypes/UInt32.html">UInt32</a></li><li class="chapter-item "><a href="../polars/datatypes/UInt64.html">UInt64</a></li><li class="chapter-item "><a href="../polars/datatypes/Float32.html">Float32</a></li><li class="chapter-item "><a href="../polars/datatypes/Float64.html">Float64</a></li><li class="chapter-item "><a href="../polars/datatypes/Boolean.html">Boolean</a></li><li class="chapter-item "><a href="../polars/datatypes/Utf8.html">Utf8</a></li><li class="chapter-item "><a href="../polars/datatypes/List.html">List</a></li><li class="chapter-item "><a href="../polars/datatypes/Date32.html">Date32</a></li><li class="chapter-item "><a href="../polars/datatypes/Date64.html">Date64</a></li><li class="chapter-item "><a href="../polars/datatypes/Time32Millisecond.html">Time32Millisecond</a></li><li class="chapter-item "><a href="../polars/datatypes/Time32Second.html">Time32Second</a></li><li class="chapter-item "><a href="../polars/datatypes/Time64Nanosecond.html">Time64Nanosecond</a></li><li class="chapter-item "><a href="../polars/datatypes/Time64Microsecond.html">Time64Microsecond</a></li><li class="chapter-item "><a href="../polars/datatypes/DurationNanosecond.html">DurationNanosecond</a></li><li class="chapter-item "><a href="../polars/datatypes/DurationMicrosecond.html">DurationMicrosecond</a></li><li class="chapter-item "><a href="../polars/datatypes/DurationMillisecond.html">DurationMillisecond</a></li><li class="chapter-item "><a href="../polars/datatypes/DurationSecond.html">DurationSecond</a></li><li class="chapter-item "><a href="../polars/datatypes/TimestampNanosecond.html">TimestampNanosecond</a></li><li class="chapter-item "><a href="../polars/datatypes/TimestampMicrosecond.html">TimestampMicrosecond</a></li><li class="chapter-item "><a href="../polars/datatypes/TimestampMillisecond.html">TimestampMillisecond</a></li><li class="chapter-item "><a href="../polars/datatypes/TimestampSecond.html">TimestampSecond</a></li><li class="chapter-item "><a href="../polars/datatypes/Object.html">Object</a></li><li class="chapter-item "><a href="../polars/datatypes/Categorical.html">Categorical</a></li></ol></li><li class="chapter-item "><a href="../polars/eager.html">eager</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/eager/frame.html">frame</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/eager/frame/DataFrame.html">DataFrame</a></li><li class="chapter-item "><a href="../polars/eager/frame/GroupBy.html">GroupBy</a></li><li class="chapter-item "><a href="../polars/eager/frame/PivotOps.html">PivotOps</a></li><li class="chapter-item "><a href="../polars/eager/frame/GBSelection.html">GBSelection</a></li></ol></li><li class="chapter-item "><a href="../polars/eager/series.html">series</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/eager/series/Series.html">Series</a></li><li class="chapter-item "><a href="../polars/eager/series/StringNameSpace.html">StringNameSpace</a></li><li class="chapter-item "><a href="../polars/eager/series/ListNameSpace.html">ListNameSpace</a></li><li class="chapter-item "><a href="../polars/eager/series/DateTimeNameSpace.html">DateTimeNameSpace</a></li><li class="chapter-item "><a href="../polars/eager/series/SeriesIter.html">SeriesIter</a></li></ol></li></ol></li><li class="chapter-item "><a href="../polars/functions.html">functions</a></li><li class="chapter-item "><a href="../polars/internals.html">internals</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/internals/construction.html">construction</a></li></ol></li><li class="chapter-item expanded "><a href="../polars/io.html" class="active">io</a></li><li class="chapter-item "><a href="../polars/lazy.html">lazy</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/lazy/expr.html">expr</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/lazy/expr/Expr.html">Expr</a></li><li class="chapter-item "><a href="../polars/lazy/expr/ExprListNameSpace.html">ExprListNameSpace</a></li><li class="chapter-item "><a href="../polars/lazy/expr/ExprStringNameSpace.html">ExprStringNameSpace</a></li><li class="chapter-item "><a href="../polars/lazy/expr/ExprDateTimeNameSpace.html">ExprDateTimeNameSpace</a></li></ol></li><li class="chapter-item "><a href="../polars/lazy/frame.html">frame</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/lazy/frame/LazyFrame.html">LazyFrame</a></li><li class="chapter-item "><a href="../polars/lazy/frame/LazyGroupBy.html">LazyGroupBy</a></li></ol></li><li class="chapter-item "><a href="../polars/lazy/functions.html">functions</a></li><li class="chapter-item "><a href="../polars/lazy/whenthen.html">whenthen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/lazy/whenthen/WhenThenThen.html">WhenThenThen</a></li><li class="chapter-item "><a href="../polars/lazy/whenthen/WhenThen.html">WhenThen</a></li><li class="chapter-item "><a href="../polars/lazy/whenthen/When.html">When</a></li></ol></li></ol></li><li class="chapter-item "><a href="../polars/string_cache.html">string_cache</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../polars/string_cache/StringCache.html">StringCache</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Polars - Python Reference Guide</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="module-polarsio"><a class="header" href="#module-polarsio">Module <code>polars.io</code></a></h1>
+<p><strong>Functions:</strong></p>
+<ul>
+<li><a href="#polarsioupdate_columns"><code>update_columns()</code></a></li>
+<li><a href="#polarsioread_csv"><code>read_csv()</code></a></li>
+<li><a href="#polarsioscan_csv"><code>scan_csv()</code></a></li>
+<li><a href="#polarsioscan_parquet"><code>scan_parquet()</code></a></li>
+<li><a href="#polarsioread_ipc"><code>read_ipc()</code></a></li>
+<li><a href="#polarsioread_parquet"><code>read_parquet()</code></a></li>
+<li><a href="#polarsioread_json"><code>read_json()</code></a></li>
+<li><a href="#polarsioread_sql"><code>read_sql()</code></a></li>
+</ul>
+<h2 id="functions"><a class="header" href="#functions">Functions</a></h2>
+<p><div class='function-wrap'></raw></p>
+<h3 id="polarsioupdate_columns"><a class="header" href="#polarsioupdate_columns"><code>polars.io.update_columns</code></a></h3>
+<pre><code class="language-python">update_columns(
+    df: pl.DataFrame, 
+    new_columns: List[str],
+) -&gt; pl.DataFrame:
+</code></pre>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">def update_columns(df: &quot;pl.DataFrame&quot;, new_columns: List[str]) -&gt; &quot;pl.DataFrame&quot;:
+    if df.width &gt; len(new_columns):
+        cols = df.columns
+        for i, name in enumerate(new_columns):
+            cols[i] = name
+        new_columns = cols
+    df.columns = new_columns
+    return df
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarsioread_csv"><a class="header" href="#polarsioread_csv"><code>polars.io.read_csv</code></a></h3>
+<pre><code class="language-python">read_csv(
+    file: Union[str, TextIO, Path, BinaryIO, bytes], 
+    infer_schema_length: int, 
+    batch_size: int, 
+    has_headers: bool, 
+    ignore_errors: bool, 
+    stop_after_n_rows: Optionalint, 
+    skip_rows: int, 
+    projection: OptionalList[int], 
+    sep: str, 
+    columns: OptionalList[str], 
+    rechunk: bool, 
+    encoding: str, 
+    n_threads: Optionalint, 
+    dtype: OptionalDict[str, Typepl.DataType], 
+    new_columns: OptionalList[str], 
+    use_pyarrow: bool, 
+    low_memory: bool, 
+    comment_char: Optionalstr, 
+    storage_options: OptionalDict, 
+    null_values: OptionalUnion[str, List[str], Dict[str, str]],
+) -&gt; pl.DataFrame:
+</code></pre>
+<p>Read into a DataFrame from a csv file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p>[<code>file</code>]: Path to a file or a file like object.
+By file-like object, we refer to objects with a <code>read()</code> method,
+such as a file handler (e.g. via builtin <code>open</code> function)
+or <code>StringIO</code> or <code>BytesIO</code>.
+If <code>fsspec</code> is installed, it will be used to open remote files</p>
+</li>
+<li>
+<p>[<code>infer_schema_length</code>]: Maximum number of lines to read to infer schema.</p>
+</li>
+<li>
+<p>[<code>batch_size</code>]: Number of lines to read into the buffer at once. Modify this to change performance.</p>
+</li>
+<li>
+<p>[<code>has_headers</code>]: Indicate if first row of dataset is header or not. If set to False first row will be set to <code>column_x</code>,
+<code>x</code> being an enumeration over every column in the dataset starting at 1.</p>
+</li>
+<li>
+<p>[<code>ignore_errors</code>]: Try to keep reading lines if some lines yield errors.</p>
+</li>
+<li>
+<p>[<code>stop_after_n_rows</code>]: After n rows are read from the CSV, it stops reading.
+During multi-threaded parsing, an upper bound of <code>n</code> rows
+cannot be guaranteed.</p>
+</li>
+<li>
+<p>[<code>skip_rows</code>]: Start reading after <code>skip_rows</code>.</p>
+</li>
+<li>
+<p>[<code>projection</code>]: Indexes of columns to select. Note that column indexes count from zero.</p>
+</li>
+<li>
+<p>[<code>sep</code>]: Delimiter/ value separator.</p>
+</li>
+<li>
+<p>[<code>columns</code>]: Columns to project/ select.</p>
+</li>
+<li>
+<p>[<code>rechunk</code>]: Make sure that all columns are contiguous in memory by aggregating the chunks into a single array.</p>
+</li>
+<li>
+<ul>
+<li>&quot;utf8-lossy&quot;</li>
+</ul>
+</li>
+<li>
+<p>[<code>n_threads</code>]: Number of threads to use in csv parsing. Defaults to the number of physical cpu's of your system.</p>
+</li>
+<li>
+<p>[<code>dtype</code>]: Overwrite the dtypes during inference.</p>
+</li>
+<li>
+<p>[<code>new_columns</code>]: Rename columns to these right after parsing. If the given list is shorted than the width of the DataFrame the
+remaining columns will have their original name.</p>
+</li>
+<li>
+<p>[<code>use_pyarrow</code>]: Try to use pyarrow's native CSV parser. This is not always possible. The set of arguments given to this function
+determine if it is possible to use pyarrows native parser. Note that pyarrow and polars may have a different
+strategy regarding type inference.</p>
+</li>
+<li>
+<p>[<code>low_memory</code>]: Reduce memory usage in expense of performance.</p>
+</li>
+<li>
+<p>[<code>comment_char</code>]: character that indicates the start of a comment line, for instance '#'.</p>
+</li>
+<li>
+<p>[<code>storage_options</code>]: Extra options that make sense for <code>fsspec.open()</code> or a particular storage connection, e.g. host, port, username, password, etc.</p>
+</li>
+<li>
+<p>[<code>null_values</code>]: Values to interpret as null values. You can provide a:</p>
+<ul>
+<li>str -&gt; all values encountered equal to this string will be null</li>
+<li>List[str] -&gt; A null value per column.</li>
+<li>Dict[str, str] -&gt; A dictionary that maps column name to a null value string.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>DataFrame</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">def read_csv(
+    file: Union[str, TextIO, Path, BinaryIO, bytes],
+    infer_schema_length: int = 100,
+    batch_size: int = 8192,
+    has_headers: bool = True,
+    ignore_errors: bool = False,
+    stop_after_n_rows: Optional[int] = None,
+    skip_rows: int = 0,
+    projection: Optional[List[int]] = None,
+    sep: str = &quot;,&quot;,
+    columns: Optional[List[str]] = None,
+    rechunk: bool = True,
+    encoding: str = &quot;utf8&quot;,
+    n_threads: Optional[int] = None,
+    dtype: Optional[Dict[str, Type[&quot;pl.DataType&quot;]]] = None,
+    new_columns: Optional[List[str]] = None,
+    use_pyarrow: bool = False,
+    low_memory: bool = False,
+    comment_char: Optional[str] = None,
+    storage_options: Optional[Dict] = None,
+    null_values: Optional[Union[str, List[str], Dict[str, str]]] = None,
+) -&gt; &quot;pl.DataFrame&quot;:
+    &quot;&quot;&quot;
+    Read into a DataFrame from a csv file.
+
+    Parameters
+    ----------
+    file
+        Path to a file or a file like object.
+        By file-like object, we refer to objects with a ``read()`` method,
+        such as a file handler (e.g. via builtin ``open`` function)
+        or ``StringIO`` or ``BytesIO``.
+        If ``fsspec`` is installed, it will be used to open remote files
+    infer_schema_length
+        Maximum number of lines to read to infer schema.
+    batch_size
+        Number of lines to read into the buffer at once. Modify this to change performance.
+    has_headers
+        Indicate if first row of dataset is header or not. If set to False first row will be set to `column_x`,
+        `x` being an enumeration over every column in the dataset starting at 1.
+    ignore_errors
+        Try to keep reading lines if some lines yield errors.
+    stop_after_n_rows
+        After n rows are read from the CSV, it stops reading.
+        During multi-threaded parsing, an upper bound of `n` rows
+        cannot be guaranteed.
+    skip_rows
+        Start reading after `skip_rows`.
+    projection
+        Indexes of columns to select. Note that column indexes count from zero.
+    sep
+        Delimiter/ value separator.
+    columns
+        Columns to project/ select.
+    rechunk
+        Make sure that all columns are contiguous in memory by aggregating the chunks into a single array.
+    encoding
+        - &quot;utf8&quot;
+        - &quot;utf8-lossy&quot;
+    n_threads
+        Number of threads to use in csv parsing. Defaults to the number of physical cpu's of your system.
+    dtype
+        Overwrite the dtypes during inference.
+    new_columns
+        Rename columns to these right after parsing. If the given list is shorted than the width of the DataFrame the
+        remaining columns will have their original name.
+    use_pyarrow
+        Try to use pyarrow's native CSV parser. This is not always possible. The set of arguments given to this function
+        determine if it is possible to use pyarrows native parser. Note that pyarrow and polars may have a different
+        strategy regarding type inference.
+    low_memory
+        Reduce memory usage in expense of performance.
+    comment_char
+        character that indicates the start of a comment line, for instance '#'.
+    storage_options
+        Extra options that make sense for ``fsspec.open()`` or a particular storage connection, e.g. host, port, username, password, etc.
+    null_values
+        Values to interpret as null values. You can provide a:
+
+        - str -&gt; all values encountered equal to this string will be null
+        - List[str] -&gt; A null value per column.
+        - Dict[str, str] -&gt; A dictionary that maps column name to a null value string.
+
+    Returns
+    -------
+    DataFrame
+    &quot;&quot;&quot;
+    if isinstance(file, bytes) and len(file) == 0:
+        raise ValueError(&quot;no date in bytes&quot;)
+
+    storage_options = storage_options or {}
+
+    if columns and not has_headers:
+        for column in columns:
+            if not column.startswith(&quot;column_&quot;):
+                raise ValueError(
+                    'Specified column names do not start with &quot;column_&quot;, '
+                    &quot;but autogenerated header names were requested.&quot;
+                )
+
+    if (
+        use_pyarrow
+        and dtype is None
+        and stop_after_n_rows is None
+        and n_threads is None
+        and encoding == &quot;utf8&quot;
+        and not low_memory
+        and null_values is None
+    ):
+        include_columns = None
+
+        if columns:
+            if not has_headers:
+                # Convert 'column_1', 'column_2', ... column names to 'f0', 'f1', ... column names for pyarrow,
+                # if CSV file does not contain a header.
+                include_columns = [f&quot;f{int(column[7:]) - 1}&quot; for column in columns]
+            else:
+                include_columns = columns
+
+        if not columns and projection:
+            # Convert column indices from projection to 'f0', 'f1', ... column names for pyarrow.
+            include_columns = [f&quot;f{column_idx}&quot; for column_idx in projection]
+
+        with _prepare_file_arg(file, **storage_options) as data:
+            tbl = pa.csv.read_csv(
+                data,
+                pa.csv.ReadOptions(
+                    skip_rows=skip_rows, autogenerate_column_names=not has_headers
+                ),
+                pa.csv.ParseOptions(delimiter=sep),
+                pa.csv.ConvertOptions(
+                    column_types=None,
+                    include_columns=include_columns,
+                    include_missing_columns=ignore_errors,
+                ),
+            )
+
+        if not has_headers:
+            # Rename 'f0', 'f1', ... columns names autogenated by pyarrow to 'column_1', 'column_2', ...
+            tbl = tbl.rename_columns(
+                [f&quot;column_{int(column[1:]) + 1}&quot; for column in tbl.column_names]
+            )
+
+        df = from_arrow(tbl, rechunk)
+        if new_columns:
+            return update_columns(df, new_columns)  # type: ignore
+        return df  # type: ignore
+
+    with _prepare_file_arg(file, **storage_options) as data:
+        df = pl.DataFrame.read_csv(
+            file=data,
+            infer_schema_length=infer_schema_length,
+            batch_size=batch_size,
+            has_headers=has_headers,
+            ignore_errors=ignore_errors,
+            stop_after_n_rows=stop_after_n_rows,
+            skip_rows=skip_rows,
+            projection=projection,
+            sep=sep,
+            columns=columns,
+            rechunk=rechunk,
+            encoding=encoding,
+            n_threads=n_threads,
+            dtype=dtype,
+            low_memory=low_memory,
+            comment_char=comment_char,
+            null_values=null_values,
+        )
+
+    if new_columns:
+        return update_columns(df, new_columns)
+    return df
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarsioscan_csv"><a class="header" href="#polarsioscan_csv"><code>polars.io.scan_csv</code></a></h3>
+<pre><code class="language-python">scan_csv(
+    file: Union[str, Path], 
+    has_headers: bool, 
+    ignore_errors: bool, 
+    sep: str, 
+    skip_rows: int, 
+    stop_after_n_rows: Optionalint, 
+    cache: bool, 
+    dtype: OptionalDict[str, Typepl.DataType], 
+    low_memory: bool, 
+    comment_char: Optionalstr, 
+    null_values: OptionalUnion[str, List[str], Dict[str, str]],
+) -&gt; pl.LazyFrame:
+</code></pre>
+<p>Lazily read from a csv file.</p>
+<p>This allows the query optimizer to push down predicates and projections to the scan level,
+thereby potentially reducing memory overhead.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p>[<code>file</code>]: Path to a file.</p>
+</li>
+<li>
+<p>[<code>has_headers</code>]: If the CSV file has headers or not.</p>
+</li>
+<li>
+<p>[<code>ignore_errors</code>]: Try to keep reading lines if some lines yield errors.</p>
+</li>
+<li>
+<p>[<code>sep</code>]: Delimiter/ value separator.</p>
+</li>
+<li>
+<p>[<code>skip_rows</code>]: Start reading after <code>skip_rows</code>.</p>
+</li>
+<li>
+<p>[<code>stop_after_n_rows</code>]: After n rows are read from the CSV, it stops reading.
+During multi-threaded parsing, an upper bound of <code>n</code> rows cannot be guaranteed.</p>
+</li>
+<li>
+<p>[<code>cache</code>]: Cache the result after reading.</p>
+</li>
+<li>
+<p>[<code>dtype</code>]: Overwrite the dtypes during inference.</p>
+</li>
+<li>
+<p>[<code>low_memory</code>]: Reduce memory usage in expense of performance.</p>
+</li>
+<li>
+<p>[<code>comment_char</code>]: character that indicates the start of a comment line, for instance '#'.</p>
+</li>
+<li>
+<p>[<code>null_values</code>]: Values to interpret as null values. You can provide a:</p>
+<ul>
+<li>str -&gt; all values encountered equal to this string will be null</li>
+<li>List[str] -&gt; A null value per column.</li>
+<li>Dict[str, str] -&gt; A dictionary that maps column name to a null value string.</li>
+</ul>
+</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">def scan_csv(
+    file: Union[str, Path],
+    has_headers: bool = True,
+    ignore_errors: bool = False,
+    sep: str = &quot;,&quot;,
+    skip_rows: int = 0,
+    stop_after_n_rows: Optional[int] = None,
+    cache: bool = True,
+    dtype: Optional[Dict[str, Type[&quot;pl.DataType&quot;]]] = None,
+    low_memory: bool = False,
+    comment_char: Optional[str] = None,
+    null_values: Optional[Union[str, List[str], Dict[str, str]]] = None,
+) -&gt; &quot;pl.LazyFrame&quot;:
+    &quot;&quot;&quot;
+    Lazily read from a csv file.
+
+    This allows the query optimizer to push down predicates and projections to the scan level,
+    thereby potentially reducing memory overhead.
+
+    Parameters
+    ----------
+    file
+        Path to a file.
+    has_headers
+        If the CSV file has headers or not.
+    ignore_errors
+        Try to keep reading lines if some lines yield errors.
+    sep
+        Delimiter/ value separator.
+    skip_rows
+        Start reading after `skip_rows`.
+    stop_after_n_rows
+        After n rows are read from the CSV, it stops reading.
+        During multi-threaded parsing, an upper bound of `n` rows cannot be guaranteed.
+    cache
+        Cache the result after reading.
+    dtype
+        Overwrite the dtypes during inference.
+    low_memory
+        Reduce memory usage in expense of performance.
+    comment_char
+        character that indicates the start of a comment line, for instance '#'.
+    null_values
+        Values to interpret as null values. You can provide a:
+
+        - str -&gt; all values encountered equal to this string will be null
+        - List[str] -&gt; A null value per column.
+        - Dict[str, str] -&gt; A dictionary that maps column name to a null value string.
+    &quot;&quot;&quot;
+    if isinstance(file, Path):
+        file = str(file)
+    return pl.LazyFrame.scan_csv(
+        file=file,
+        has_headers=has_headers,
+        sep=sep,
+        ignore_errors=ignore_errors,
+        skip_rows=skip_rows,
+        stop_after_n_rows=stop_after_n_rows,
+        cache=cache,
+        dtype=dtype,
+        low_memory=low_memory,
+        comment_char=comment_char,
+        null_values=null_values,
+    )
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarsioscan_parquet"><a class="header" href="#polarsioscan_parquet"><code>polars.io.scan_parquet</code></a></h3>
+<pre><code class="language-python">scan_parquet(
+    file: Union[str, Path], 
+    stop_after_n_rows: Optionalint, 
+    cache: bool,
+) -&gt; pl.LazyFrame:
+</code></pre>
+<p>Lazily read from a parquet file.</p>
+<p>This allows the query optimizer to push down predicates and projections to the scan level,
+thereby potentially reducing memory overhead.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>file</code>]: Path to a file.</li>
+<li>[<code>stop_after_n_rows</code>]: After n rows are read from the parquet, it stops reading.</li>
+<li>[<code>cache</code>]: Cache the result after reading.</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">def scan_parquet(
+    file: Union[str, Path],
+    stop_after_n_rows: Optional[int] = None,
+    cache: bool = True,
+) -&gt; &quot;pl.LazyFrame&quot;:
+    &quot;&quot;&quot;
+    Lazily read from a parquet file.
+
+    This allows the query optimizer to push down predicates and projections to the scan level,
+    thereby potentially reducing memory overhead.
+
+    Parameters
+    ----------
+    file
+        Path to a file.
+    stop_after_n_rows
+        After n rows are read from the parquet, it stops reading.
+    cache
+        Cache the result after reading.
+    &quot;&quot;&quot;
+    if isinstance(file, Path):
+        file = str(file)
+    return pl.LazyFrame.scan_parquet(
+        file=file, stop_after_n_rows=stop_after_n_rows, cache=cache
+    )
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarsioread_ipc"><a class="header" href="#polarsioread_ipc"><code>polars.io.read_ipc</code></a></h3>
+<pre><code class="language-python">read_ipc(
+    file: Union[str, BinaryIO, Path, bytes], 
+    use_pyarrow: bool, 
+    storage_options: OptionalDict,
+) -&gt; pl.DataFrame:
+</code></pre>
+<p>Read into a DataFrame from Arrow IPC stream format. This is also called the feather format.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>file</code>]: Path to a file or a file like object.
+If <code>fsspec</code> is installed, it will be used to open remote files</li>
+<li>[<code>use_pyarrow</code>]: Use pyarrow or the native rust reader.</li>
+<li>[<code>storage_options</code>]: Extra options that make sense for <code>fsspec.open()</code> or a particular storage connection, e.g. host, port, username, password, etc.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>DataFrame</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">def read_ipc(
+    file: Union[str, BinaryIO, Path, bytes],
+    use_pyarrow: bool = True,
+    storage_options: Optional[Dict] = None,
+) -&gt; &quot;pl.DataFrame&quot;:
+    &quot;&quot;&quot;
+    Read into a DataFrame from Arrow IPC stream format. This is also called the feather format.
+
+    Parameters
+    ----------
+    file
+        Path to a file or a file like object.
+        If ``fsspec`` is installed, it will be used to open remote files
+    use_pyarrow
+        Use pyarrow or the native rust reader.
+    storage_options
+        Extra options that make sense for ``fsspec.open()`` or a particular storage connection, e.g. host, port, username, password, etc.
+
+    Returns
+    -------
+    DataFrame
+    &quot;&quot;&quot;
+    storage_options = storage_options or {}
+    with _prepare_file_arg(file, **storage_options) as data:
+        if use_pyarrow:
+            tbl = pa.feather.read_table(data)
+            return pl.DataFrame.from_arrow(tbl)
+        return pl.DataFrame.read_ipc(data)
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarsioread_parquet"><a class="header" href="#polarsioread_parquet"><code>polars.io.read_parquet</code></a></h3>
+<pre><code class="language-python">read_parquet(
+    source: Union[str, List[str], Path, BinaryIO, bytes], 
+    use_pyarrow: bool, 
+    stop_after_n_rows: Optionalint, 
+    memory_map: bool, 
+    columns: OptionalList[str], 
+    storage_options: OptionalDict, 
+    **kwargs,
+) -&gt; pl.DataFrame:
+</code></pre>
+<p>Read into a DataFrame from a parquet file.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>source</code>]: Path to a file, list of files, or a file like object. If the path is a directory, that directory will be used
+as partition aware scan.
+If <code>fsspec</code> is installed, it will be used to open remote files</li>
+<li>[<code>use_pyarrow</code>]: Use pyarrow instead of the rust native parquet reader. The pyarrow reader is more stable.</li>
+<li>[<code>stop_after_n_rows</code>]: After n rows are read from the parquet, it stops reading.
+Only valid when 'use_pyarrow==False'</li>
+<li>[<code>memory_map</code>]: Memory map underlying file. This will likely increase performance.
+Only used when 'use_pyarrow==True'</li>
+<li>[<code>columns</code>]: Columns to project/ select.
+Only valid when 'use_pyarrow==True'</li>
+<li>[<code>storage_options</code>]: Extra options that make sense for <code>fsspec.open()</code> or a particular storage connection, e.g. host, port, username, password, etc.
+**kwargs
+kwargs for <a href="https:/arrow.apache.org/docs/python/generated/pyarrow.parquet.read_table.html">pyarrow.parquet.read_table</a></li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>DataFrame</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">def read_parquet(
+    source: Union[str, List[str], Path, BinaryIO, bytes],
+    use_pyarrow: bool = True,
+    stop_after_n_rows: Optional[int] = None,
+    memory_map: bool = True,
+    columns: Optional[List[str]] = None,
+    storage_options: Optional[Dict] = None,
+    **kwargs: Any,
+) -&gt; &quot;pl.DataFrame&quot;:
+    &quot;&quot;&quot;
+    Read into a DataFrame from a parquet file.
+
+    Parameters
+    ----------
+    source
+        Path to a file, list of files, or a file like object. If the path is a directory, that directory will be used
+        as partition aware scan.
+        If ``fsspec`` is installed, it will be used to open remote files
+    use_pyarrow
+            Use pyarrow instead of the rust native parquet reader. The pyarrow reader is more stable.
+    stop_after_n_rows
+        After n rows are read from the parquet, it stops reading.
+        Only valid when 'use_pyarrow==False'
+    memory_map
+        Memory map underlying file. This will likely increase performance.
+        Only used when 'use_pyarrow==True'
+    columns
+        Columns to project/ select.
+        Only valid when 'use_pyarrow==True'
+    storage_options
+        Extra options that make sense for ``fsspec.open()`` or a particular storage connection, e.g. host, port, username, password, etc.
+    **kwargs
+        kwargs for [pyarrow.parquet.read_table](https://arrow.apache.org/docs/python/generated/pyarrow.parquet.read_table.html)
+
+    Returns
+    -------
+    DataFrame
+    &quot;&quot;&quot;
+    if use_pyarrow:
+        if stop_after_n_rows:
+            raise ValueError(
+                &quot;'stop_after_n_rows' cannot be used with 'use_pyarrow==True'.&quot;
+            )
+    else:
+        if columns:
+            raise ValueError(&quot;'columns' cannot be used with 'use_pyarrow==False'.&quot;)
+    storage_options = storage_options or {}
+    with _prepare_file_arg(source, **storage_options) as source_prep:
+        if use_pyarrow:
+            return from_arrow(  # type: ignore[return-value]
+                pa.parquet.read_table(
+                    source_prep, memory_map=memory_map, columns=columns, **kwargs
+                )
+            )
+        return pl.DataFrame.read_parquet(
+            source_prep, stop_after_n_rows=stop_after_n_rows
+        )
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarsioread_json"><a class="header" href="#polarsioread_json"><code>polars.io.read_json</code></a></h3>
+<pre><code class="language-python">read_json(source: Union[str, BytesIO]) -&gt; pl.DataFrame:
+</code></pre>
+<p>Read into a DataFrame from JSON format.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>source</code>]: Path to a file or a file like object.</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">def read_json(source: Union[str, BytesIO]) -&gt; &quot;pl.DataFrame&quot;:
+    &quot;&quot;&quot;
+    Read into a DataFrame from JSON format.
+
+    Parameters
+    ----------
+    source
+        Path to a file or a file like object.
+    &quot;&quot;&quot;
+    return pl.DataFrame.read_json(source)
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarsioread_sql"><a class="header" href="#polarsioread_sql"><code>polars.io.read_sql</code></a></h3>
+<pre><code class="language-python">read_sql(
+    sql: Union[List[str], str], 
+    connection_uri: str, 
+    partition_on: Optionalstr, 
+    partition_range: OptionalTuple[int, int], 
+    partition_num: Optionalint,
+) -&gt; pl.DataFrame:
+</code></pre>
+<p>Read a SQL query into a DataFrame
+Make sure to install connextorx&gt;=0.2</p>
+<p><strong>Sources:</strong></p>
+<p>Supports reading a sql query from the following data sources:</p>
+<ul>
+<li>Postgres</li>
+<li>Mysql</li>
+<li>Sqlite</li>
+<li>Redshift (through postgres protocol)</li>
+<li>Clickhouse (through mysql protocol)</li>
+</ul>
+<h2 id="source-not-supported"><a class="header" href="#source-not-supported">Source not supported?</a></h2>
+<p>If a database source is not supported, pandas can be used to load the query:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>df = pl.from_pandas(pd.read_sql(sql, engine))</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>sql</code>]: raw sql query</li>
+<li>[<code>connection_uri</code>]: connectorx connection uri:
+- &quot;postgresql:/username:password@server:port/database&quot;</li>
+<li>[<code>partition_on</code>]: the column to partition the result.</li>
+<li>[<code>partition_range</code>]: the value range of the partition column.</li>
+<li>[<code>partition_num</code>]: how many partition to generate.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<h2 id="single-threaded"><a class="header" href="#single-threaded">Single threaded</a></h2>
+<p>Read a DataFrame from a SQL using a single thread:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>uri = &quot;postgresql:/username:password@server:port/database&quot;
+query = &quot;SELECT * FROM lineitem&quot;
+pl.read_sql(query, uri)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="using-10-threads"><a class="header" href="#using-10-threads">Using 10 threads</a></h2>
+<p>Read a DataFrame parallelly using 10 threads by automatically partitioning the provided SQL on the partition column:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>uri = &quot;postgresql:/username:password@server:port/database&quot;
+query = &quot;SELECT * FROM lineitem&quot;
+read_sql(query, uri, partition_on=&quot;partition_col&quot;, partition_num=10)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="using"><a class="header" href="#using">Using</a></h2>
+<p>Read a DataFrame parallel using 2 threads by manually providing two partition SQLs:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>uri = &quot;postgresql:/username:password@server:port/database&quot;
+queries = [&quot;SELECT * FROM lineitem WHERE partition_col &lt;= 10&quot;, &quot;SELECT * FROM lineitem WHERE partition_col &gt; 10&quot;]
+read_sql(uri, queries)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">def read_sql(
+    sql: Union[List[str], str],
+    connection_uri: str,
+    partition_on: Optional[str] = None,
+    partition_range: Optional[Tuple[int, int]] = None,
+    partition_num: Optional[int] = None,
+) -&gt; &quot;pl.DataFrame&quot;:
+    &quot;&quot;&quot;
+    Read a SQL query into a DataFrame
+    Make sure to install connextorx&gt;=0.2
+
+    # Sources
+    Supports reading a sql query from the following data sources:
+
+    * Postgres
+    * Mysql
+    * Sqlite
+    * Redshift (through postgres protocol)
+    * Clickhouse (through mysql protocol)
+
+    ## Source not supported?
+    If a database source is not supported, pandas can be used to load the query:
+
+    &gt;&gt;&gt;&gt; df = pl.from_pandas(pd.read_sql(sql, engine))
+
+    Parameters
+    ----------
+    sql
+        raw sql query
+    connection_uri
+        connectorx connection uri:
+            - &quot;postgresql://username:password@server:port/database&quot;
+    partition_on
+      the column to partition the result.
+    partition_range
+      the value range of the partition column.
+    partition_num
+      how many partition to generate.
+
+
+    Examples
+    --------
+
+    ## Single threaded
+    Read a DataFrame from a SQL using a single thread:
+
+    &gt;&gt;&gt; uri = &quot;postgresql://username:password@server:port/database&quot;
+    &gt;&gt;&gt; query = &quot;SELECT * FROM lineitem&quot;
+    &gt;&gt;&gt; pl.read_sql(query, uri)
+
+    ## Using 10 threads
+    Read a DataFrame parallelly using 10 threads by automatically partitioning the provided SQL on the partition column:
+
+    &gt;&gt;&gt; uri = &quot;postgresql://username:password@server:port/database&quot;
+    &gt;&gt;&gt; query = &quot;SELECT * FROM lineitem&quot;
+    &gt;&gt;&gt; read_sql(query, uri, partition_on=&quot;partition_col&quot;, partition_num=10)
+
+    ## Using
+    Read a DataFrame parallel using 2 threads by manually providing two partition SQLs:
+
+    &gt;&gt;&gt; uri = &quot;postgresql://username:password@server:port/database&quot;
+    &gt;&gt;&gt; queries = [&quot;SELECT * FROM lineitem WHERE partition_col &lt;= 10&quot;, &quot;SELECT * FROM lineitem WHERE partition_col &gt; 10&quot;]
+    &gt;&gt;&gt; read_sql(uri, queries)
+
+    &quot;&quot;&quot;
+    if _WITH_CX:
+        tbl = cx.read_sql(
+            conn=connection_uri,
+            query=sql,
+            return_type=&quot;arrow&quot;,
+            partition_on=partition_on,
+            partition_range=partition_range,
+            partition_num=partition_num,
+        )
+        return pl.from_arrow(tbl)  # type: ignore[return-value]
+    else:
+        raise ImportError(
+            &quot;connectorx is not installed.&quot; &quot;Please run pip install connectorx&gt;=0.2.0a3&quot;
+        )
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../polars/internals/construction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../polars/lazy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../polars/internals/construction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../polars/lazy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../theme/js/index.js"></script>
+        
+
+        
+
+    </body>
+</html>

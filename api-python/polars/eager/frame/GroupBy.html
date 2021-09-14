@@ -1,0 +1,1572 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js ayu">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>GroupBy - Polars - Python Reference Guide</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../../favicon.png">
+        
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../../theme/css/style.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../../polars.html">polars</a></li><li class="chapter-item "><a href="../../../polars/cfg.html">cfg</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/cfg/Config.html">Config</a></li></ol></li><li class="chapter-item "><a href="../../../polars/convert.html">convert</a></li><li class="chapter-item "><a href="../../../polars/datatypes.html">datatypes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/datatypes/DataType.html">DataType</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Int8.html">Int8</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Int16.html">Int16</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Int32.html">Int32</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Int64.html">Int64</a></li><li class="chapter-item "><a href="../../../polars/datatypes/UInt8.html">UInt8</a></li><li class="chapter-item "><a href="../../../polars/datatypes/UInt16.html">UInt16</a></li><li class="chapter-item "><a href="../../../polars/datatypes/UInt32.html">UInt32</a></li><li class="chapter-item "><a href="../../../polars/datatypes/UInt64.html">UInt64</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Float32.html">Float32</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Float64.html">Float64</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Boolean.html">Boolean</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Utf8.html">Utf8</a></li><li class="chapter-item "><a href="../../../polars/datatypes/List.html">List</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Date32.html">Date32</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Date64.html">Date64</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Time32Millisecond.html">Time32Millisecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Time32Second.html">Time32Second</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Time64Nanosecond.html">Time64Nanosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Time64Microsecond.html">Time64Microsecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/DurationNanosecond.html">DurationNanosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/DurationMicrosecond.html">DurationMicrosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/DurationMillisecond.html">DurationMillisecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/DurationSecond.html">DurationSecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/TimestampNanosecond.html">TimestampNanosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/TimestampMicrosecond.html">TimestampMicrosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/TimestampMillisecond.html">TimestampMillisecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/TimestampSecond.html">TimestampSecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Object.html">Object</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Categorical.html">Categorical</a></li></ol></li><li class="chapter-item expanded "><a href="../../../polars/eager.html">eager</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../polars/eager/frame.html">frame</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/eager/frame/DataFrame.html">DataFrame</a></li><li class="chapter-item expanded "><a href="../../../polars/eager/frame/GroupBy.html" class="active">GroupBy</a></li><li class="chapter-item "><a href="../../../polars/eager/frame/PivotOps.html">PivotOps</a></li><li class="chapter-item "><a href="../../../polars/eager/frame/GBSelection.html">GBSelection</a></li></ol></li><li class="chapter-item "><a href="../../../polars/eager/series.html">series</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/eager/series/Series.html">Series</a></li><li class="chapter-item "><a href="../../../polars/eager/series/StringNameSpace.html">StringNameSpace</a></li><li class="chapter-item "><a href="../../../polars/eager/series/ListNameSpace.html">ListNameSpace</a></li><li class="chapter-item "><a href="../../../polars/eager/series/DateTimeNameSpace.html">DateTimeNameSpace</a></li><li class="chapter-item "><a href="../../../polars/eager/series/SeriesIter.html">SeriesIter</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../polars/functions.html">functions</a></li><li class="chapter-item "><a href="../../../polars/internals.html">internals</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/internals/construction.html">construction</a></li></ol></li><li class="chapter-item "><a href="../../../polars/io.html">io</a></li><li class="chapter-item "><a href="../../../polars/lazy.html">lazy</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/lazy/expr.html">expr</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/lazy/expr/Expr.html">Expr</a></li><li class="chapter-item "><a href="../../../polars/lazy/expr/ExprListNameSpace.html">ExprListNameSpace</a></li><li class="chapter-item "><a href="../../../polars/lazy/expr/ExprStringNameSpace.html">ExprStringNameSpace</a></li><li class="chapter-item "><a href="../../../polars/lazy/expr/ExprDateTimeNameSpace.html">ExprDateTimeNameSpace</a></li></ol></li><li class="chapter-item "><a href="../../../polars/lazy/frame.html">frame</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/lazy/frame/LazyFrame.html">LazyFrame</a></li><li class="chapter-item "><a href="../../../polars/lazy/frame/LazyGroupBy.html">LazyGroupBy</a></li></ol></li><li class="chapter-item "><a href="../../../polars/lazy/functions.html">functions</a></li><li class="chapter-item "><a href="../../../polars/lazy/whenthen.html">whenthen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/lazy/whenthen/WhenThenThen.html">WhenThenThen</a></li><li class="chapter-item "><a href="../../../polars/lazy/whenthen/WhenThen.html">WhenThen</a></li><li class="chapter-item "><a href="../../../polars/lazy/whenthen/When.html">When</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../polars/string_cache.html">string_cache</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/string_cache/StringCache.html">StringCache</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Polars - Python Reference Guide</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="polarseagerframegroupby"><a class="header" href="#polarseagerframegroupby"><code>polars.eager.frame.GroupBy</code></a></h1>
+<p>Starts a new GroupBy operation.</p>
+<p>You can also loop over this Object to loop over <code>DataFrames</code> with unique groups.</p>
+<p><strong>Examples:</strong></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>for group in df.groupby(&quot;foo&quot;):
+print(group)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><a href="#polarseagerframegroupbyget_group"><code>get_group()</code></a></li>
+<li><a href="#polarseagerframegroupbygroups"><code>groups()</code></a></li>
+<li><a href="#polarseagerframegroupbyapply"><code>apply()</code></a></li>
+<li><a href="#polarseagerframegroupbyagg"><code>agg()</code></a></li>
+<li><a href="#polarseagerframegroupbyhead"><code>head()</code></a></li>
+<li><a href="#polarseagerframegroupbytail"><code>tail()</code></a></li>
+<li><a href="#polarseagerframegroupbyselect"><code>select()</code></a></li>
+<li><a href="#polarseagerframegroupbyselect_all"><code>select_all()</code></a></li>
+<li><a href="#polarseagerframegroupbypivot"><code>pivot()</code></a></li>
+<li><a href="#polarseagerframegroupbyfirst"><code>first()</code></a></li>
+<li><a href="#polarseagerframegroupbylast"><code>last()</code></a></li>
+<li><a href="#polarseagerframegroupbysum"><code>sum()</code></a></li>
+<li><a href="#polarseagerframegroupbymin"><code>min()</code></a></li>
+<li><a href="#polarseagerframegroupbymax"><code>max()</code></a></li>
+<li><a href="#polarseagerframegroupbycount"><code>count()</code></a></li>
+<li><a href="#polarseagerframegroupbymean"><code>mean()</code></a></li>
+<li><a href="#polarseagerframegroupbyn_unique"><code>n_unique()</code></a></li>
+<li><a href="#polarseagerframegroupbyquantile"><code>quantile()</code></a></li>
+<li><a href="#polarseagerframegroupbymedian"><code>median()</code></a></li>
+<li><a href="#polarseagerframegroupbyagg_list"><code>agg_list()</code></a></li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">class GroupBy:
+    &quot;&quot;&quot;
+    Starts a new GroupBy operation.
+
+    You can also loop over this Object to loop over `DataFrames` with unique groups.
+
+    Examples
+    --------
+
+    &gt;&gt;&gt; for group in df.groupby(&quot;foo&quot;):
+    &gt;&gt;&gt;    print(group)
+    &quot;&quot;&quot;
+
+    def __init__(
+        self,
+        df: &quot;PyDataFrame&quot;,
+        by: Union[str, tp.List[str]],
+        maintain_order: bool = False,
+        downsample: bool = False,
+        rule: Optional[str] = None,
+        downsample_n: int = 0,
+    ):
+        self._df = df
+        self.by = by
+        self.maintain_order = maintain_order
+        self.downsample = downsample
+        self.rule = rule
+        self.downsample_n = downsample_n
+
+    def __getitem__(self, item: Any) -&gt; &quot;GBSelection&quot;:
+        return self.select(item)
+
+    def __iter__(self) -&gt; Iterable[Any]:
+        groups_df = self.groups()
+        groups = groups_df[&quot;groups&quot;]
+        df = wrap_df(self._df)
+        for i in range(groups_df.height):
+            yield df[groups[i]]
+
+    def get_group(self, group_value: Union[Any, Tuple[Any]]) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Select a single group as a new DataFrame.
+
+        Parameters
+        ----------
+        group_value
+            Group to select.
+        &quot;&quot;&quot;
+        groups_df = self.groups()
+        groups = groups_df[&quot;groups&quot;]
+
+        if not isinstance(group_value, list):
+            group_value = [group_value]
+
+        by = self.by
+        if not isinstance(by, list):
+            by = [by]
+
+        mask = None
+        for column, group_val in zip(by, group_value):
+            local_mask = groups_df[column] == group_val
+            if mask is None:
+                mask = local_mask
+            else:
+                mask = mask &amp; local_mask
+
+        # should be only one match
+        try:
+            groups_idx = groups[mask][0]
+        except IndexError:
+            raise ValueError(f&quot;no group: {group_value} found&quot;)
+
+        df = wrap_df(self._df)
+        return df[groups_idx]
+
+    def groups(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Return a `DataFrame` with:
+
+        * the groupby keys
+        * the group indexes aggregated as lists
+        &quot;&quot;&quot;
+        return wrap_df(self._df.groupby(self.by, None, &quot;groups&quot;))
+
+    def apply(self, f: Callable[[DataFrame], DataFrame]) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Apply a function over the groups as a sub-DataFrame.
+
+        Parameters
+        ----------
+        f
+            Custom function.
+
+        Returns
+        -------
+        DataFrame
+        &quot;&quot;&quot;
+        return wrap_df(self._df.groupby_apply(self.by, f))
+
+    def agg(
+        self,
+        column_to_agg: Union[
+            tp.List[Tuple[str, tp.List[str]]],
+            Dict[str, Union[str, tp.List[str]]],
+            tp.List[&quot;pl.Expr&quot;],
+            &quot;pl.Expr&quot;,
+        ],
+    ) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Use multiple aggregations on columns. This can be combined with complete lazy API
+        and is considered idiomatic polars.
+
+        Parameters
+        ----------
+        column_to_agg
+            map column to aggregation functions.
+
+            Examples:
+                ## use lazy API syntax (recommended)
+                [col(&quot;foo&quot;).sum(), col(&quot;bar&quot;).min()]
+
+                ## column name to aggregation with tuples:
+                [(&quot;foo&quot;, [&quot;sum&quot;, &quot;n_unique&quot;, &quot;min&quot;]),
+                 (&quot;bar&quot;: [&quot;max&quot;])]
+
+                ## column name to aggregation with dict:
+                {&quot;foo&quot;: [&quot;sum&quot;, &quot;n_unique&quot;, &quot;min&quot;],
+                &quot;bar&quot;: &quot;max&quot; }
+
+        Returns
+        -------
+        Result of groupby split apply operations.
+
+
+        Examples
+        --------
+
+        &gt;&gt;&gt; # use lazy API
+        &gt;&gt;&gt; (df.groupby([&quot;foo&quot;, &quot;bar])
+        &gt;&gt;&gt; .agg([pl.sum(&quot;ham&quot;), col(&quot;spam&quot;).tail(4).sum()])
+
+        &gt;&gt;&gt; # use a dict
+        &gt;&gt;&gt; (df.groupby([&quot;foo&quot;, &quot;bar])
+        &gt;&gt;&gt; .agg({&quot;spam&quot;: [&quot;sum&quot;, &quot;min&quot;})
+
+        &quot;&quot;&quot;
+        if isinstance(column_to_agg, pl.Expr):
+            column_to_agg = [column_to_agg]
+        if isinstance(column_to_agg, dict):
+            column_to_agg = [
+                (column, [agg] if isinstance(agg, str) else agg)
+                for (column, agg) in column_to_agg.items()
+            ]
+        elif isinstance(column_to_agg, list):
+
+            if isinstance(column_to_agg[0], tuple):
+                column_to_agg = [  # type: ignore[misc]
+                    (column, [agg] if isinstance(agg, str) else agg)  # type: ignore[misc]
+                    for (column, agg) in column_to_agg
+                ]
+
+            elif isinstance(column_to_agg[0], pl.Expr):
+                return (
+                    wrap_df(self._df)
+                    .lazy()
+                    .groupby(self.by, maintain_order=self.maintain_order)
+                    .agg(column_to_agg)  # type: ignore[arg-type]
+                    .collect(no_optimization=True, string_cache=False)
+                )
+
+                pass
+            else:
+                raise ValueError(
+                    f&quot;argument: {column_to_agg} not understood, have you passed a list of expressions?&quot;
+                )
+        else:
+            raise ValueError(
+                f&quot;argument: {column_to_agg} not understood, have you passed a list of expressions?&quot;
+            )
+
+        if self.downsample:
+            return wrap_df(
+                self._df.downsample_agg(
+                    self.by, self.rule, self.downsample_n, column_to_agg
+                )
+            )
+
+        return wrap_df(self._df.groupby_agg(self.by, column_to_agg))
+
+    def head(self, n: int = 5) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Return first n rows of each group.
+
+        Parameters
+        ----------
+        n
+            Number of values of the group to select
+
+
+        Examples
+        --------
+
+        &gt;&gt;&gt; df = pl.DataFrame({
+        &gt;&gt;&gt;     &quot;letters&quot;: [&quot;c&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;, &quot;a&quot;, &quot;b&quot;],
+        &gt;&gt;&gt;     &quot;nrs&quot;: [1, 2, 3, 4, 5, 6]
+        &gt;&gt;&gt; })
+        &gt;&gt;&gt; df
+        shape: (6, 2)
+        ╭─────────┬─────╮
+        │ letters ┆ nrs │
+        │ ---     ┆ --- │
+        │ str     ┆ i64 │
+        ╞═════════╪═════╡
+        │ &quot;c&quot;     ┆ 1   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 2   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 3   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 4   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 5   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;b&quot;     ┆ 6   │
+        ╰─────────┴─────╯
+        &gt;&gt;&gt; (df.groupby(&quot;letters&quot;)
+        &gt;&gt;&gt;  .head(2)
+        &gt;&gt;&gt;  .sort(&quot;letters&quot;)
+        &gt;&gt;&gt; )
+        shape: (5, 2)
+        ╭─────────┬─────╮
+        │ letters ┆ nrs │
+        │ ---     ┆ --- │
+        │ str     ┆ i64 │
+        ╞═════════╪═════╡
+        │ &quot;a&quot;     ┆ 3   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 5   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;b&quot;     ┆ 6   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 1   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 2   │
+        ╰─────────┴─────╯
+
+        &quot;&quot;&quot;
+        return (
+            wrap_df(self._df)
+            .lazy()
+            .groupby(self.by, self.maintain_order)
+            .head(n)  # type: ignore[arg-type]
+            .collect(no_optimization=True, string_cache=False)
+        )
+
+    def tail(self, n: int = 5) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Return last n rows of each group.
+
+        Parameters
+        ----------
+        n
+            Number of values of the group to select
+
+        Examples
+        --------
+
+        &gt;&gt;&gt; df = pl.DataFrame({
+        &gt;&gt;&gt;     &quot;letters&quot;: [&quot;c&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;, &quot;a&quot;, &quot;b&quot;],
+        &gt;&gt;&gt;     &quot;nrs&quot;: [1, 2, 3, 4, 5, 6]
+        &gt;&gt;&gt; })
+        &gt;&gt;&gt; df
+        shape: (6, 2)
+        ╭─────────┬─────╮
+        │ letters ┆ nrs │
+        │ ---     ┆ --- │
+        │ str     ┆ i64 │
+        ╞═════════╪═════╡
+        │ &quot;c&quot;     ┆ 1   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 2   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 3   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 4   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 5   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;b&quot;     ┆ 6   │
+        ╰─────────┴─────╯
+        &gt;&gt;&gt; (df.groupby(&quot;letters&quot;)
+        &gt;&gt;&gt;  .tail(2)
+        &gt;&gt;&gt;  .sort(&quot;letters&quot;)
+        &gt;&gt;&gt; )
+        shape: (5, 2)
+        ╭─────────┬─────╮
+        │ letters ┆ nrs │
+        │ ---     ┆ --- │
+        │ str     ┆ i64 │
+        ╞═════════╪═════╡
+        │ &quot;a&quot;     ┆ 3   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 5   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;b&quot;     ┆ 6   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 2   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 4   │
+        ╰─────────┴─────╯
+
+        &quot;&quot;&quot;
+        return (
+            wrap_df(self._df)
+            .lazy()
+            .groupby(self.by, self.maintain_order)
+            .tail(n)  # type: ignore[arg-type]
+            .collect(no_optimization=True, string_cache=False)
+        )
+
+    def select(self, columns: Union[str, tp.List[str]]) -&gt; &quot;GBSelection&quot;:
+        &quot;&quot;&quot;
+        .. deprecated:: 0.8.16
+            Use `groupby.agg(col(&quot;selection&quot;))` instead
+
+        Select the columns that will be aggregated.
+
+        Parameters
+        ----------
+        columns
+            One or multiple columns.
+        &quot;&quot;&quot;
+        if self.downsample:
+            raise ValueError(&quot;select not supported in downsample operation&quot;)
+        if isinstance(columns, str):
+            columns = [columns]
+        return GBSelection(self._df, self.by, columns)
+
+    def select_all(self) -&gt; &quot;GBSelection&quot;:
+        &quot;&quot;&quot;
+        .. deprecated:: 0.8.16
+            Use `groupby.agg(col(&quot;*&quot;))` instead
+
+        Select all columns for aggregation.
+        &quot;&quot;&quot;
+        return GBSelection(
+            self._df, self.by, None, self.downsample, self.rule, self.downsample_n
+        )
+
+    def pivot(self, pivot_column: str, values_column: str) -&gt; &quot;PivotOps&quot;:
+        &quot;&quot;&quot;
+        Do a pivot operation based on the group key, a pivot column and an aggregation function on the values column.
+
+        Parameters
+        ----------
+        pivot_column
+            Column to pivot.
+        values_column
+            Column that will be aggregated.
+        &quot;&quot;&quot;
+        if self.downsample:
+            raise ValueError(&quot;Pivot not supported in downsample operation.&quot;)
+        return PivotOps(self._df, self.by, pivot_column, values_column)
+
+    def first(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Aggregate the first values in the group.
+        &quot;&quot;&quot;
+        return self.select_all().first()
+
+    def last(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Aggregate the last values in the group.
+        &quot;&quot;&quot;
+        return self.select_all().last()
+
+    def sum(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Reduce the groups to the sum.
+        &quot;&quot;&quot;
+        return self.select_all().sum()
+
+    def min(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Reduce the groups to the minimal value.
+        &quot;&quot;&quot;
+        return self.select_all().min()
+
+    def max(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Reduce the groups to the maximal value.
+        &quot;&quot;&quot;
+        return self.select_all().max()
+
+    def count(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Count the number of values in each group.
+        &quot;&quot;&quot;
+        return self.select_all().count()
+
+    def mean(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Reduce the groups to the mean values.
+        &quot;&quot;&quot;
+        return self.select_all().mean()
+
+    def n_unique(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Count the unique values per group.
+        &quot;&quot;&quot;
+        return self.select_all().n_unique()
+
+    def quantile(self, quantile: float) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Compute the quantile per group.
+        &quot;&quot;&quot;
+        return self.select_all().quantile(quantile)
+
+    def median(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Return the median per group.
+        &quot;&quot;&quot;
+        return self.select_all().median()
+
+    def agg_list(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Aggregate the groups into Series.
+        &quot;&quot;&quot;
+        return self.select_all().agg_list()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<h2 id="constructor"><a class="header" href="#constructor">Constructor</a></h2>
+<pre><code class="language-python">GroupBy(df: PyDataFrame, 
+    by: Union[str, tp.List[str]], 
+    maintain_order: bool, 
+    downsample: bool, 
+    rule: Optionalstr, 
+    downsample_n: int,)
+</code></pre>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def __init__(
+        self,
+        df: &quot;PyDataFrame&quot;,
+        by: Union[str, tp.List[str]],
+        maintain_order: bool = False,
+        downsample: bool = False,
+        rule: Optional[str] = None,
+        downsample_n: int = 0,
+    ):
+        self._df = df
+        self.by = by
+        self.maintain_order = maintain_order
+        self.downsample = downsample
+        self.rule = rule
+        self.downsample_n = downsample_n
+</code></pre>
+<p>
+</details>
+</raw></p>
+<h2 id="methods"><a class="header" href="#methods">Methods</a></h2>
+<p><div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyget_group"><a class="header" href="#polarseagerframegroupbyget_group"><code>polars.eager.frame.GroupBy.get_group</code></a></h3>
+<pre><code class="language-python">get_group(group_value: Union[Any, TupleAny],) -&gt; DataFrame:
+</code></pre>
+<p>Select a single group as a new DataFrame.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>group_value</code>]: Group to select.</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def get_group(self, group_value: Union[Any, Tuple[Any]]) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Select a single group as a new DataFrame.
+
+        Parameters
+        ----------
+        group_value
+            Group to select.
+        &quot;&quot;&quot;
+        groups_df = self.groups()
+        groups = groups_df[&quot;groups&quot;]
+
+        if not isinstance(group_value, list):
+            group_value = [group_value]
+
+        by = self.by
+        if not isinstance(by, list):
+            by = [by]
+
+        mask = None
+        for column, group_val in zip(by, group_value):
+            local_mask = groups_df[column] == group_val
+            if mask is None:
+                mask = local_mask
+            else:
+                mask = mask &amp; local_mask
+
+        # should be only one match
+        try:
+            groups_idx = groups[mask][0]
+        except IndexError:
+            raise ValueError(f&quot;no group: {group_value} found&quot;)
+
+        df = wrap_df(self._df)
+        return df[groups_idx]
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbygroups"><a class="header" href="#polarseagerframegroupbygroups"><code>polars.eager.frame.GroupBy.groups</code></a></h3>
+<pre><code class="language-python">groups() -&gt; DataFrame:
+</code></pre>
+<p>Return a <code>DataFrame</code> with:</p>
+<ul>
+<li>the groupby keys</li>
+<li>the group indexes aggregated as lists</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def groups(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Return a `DataFrame` with:
+
+        * the groupby keys
+        * the group indexes aggregated as lists
+        &quot;&quot;&quot;
+        return wrap_df(self._df.groupby(self.by, None, &quot;groups&quot;))
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyapply"><a class="header" href="#polarseagerframegroupbyapply"><code>polars.eager.frame.GroupBy.apply</code></a></h3>
+<pre><code class="language-python">apply(f: Callable[[DataFrame], DataFrame],) -&gt; DataFrame:
+</code></pre>
+<p>Apply a function over the groups as a sub-DataFrame.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>f</code>]: Custom function.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>DataFrame</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def apply(self, f: Callable[[DataFrame], DataFrame]) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Apply a function over the groups as a sub-DataFrame.
+
+        Parameters
+        ----------
+        f
+            Custom function.
+
+        Returns
+        -------
+        DataFrame
+        &quot;&quot;&quot;
+        return wrap_df(self._df.groupby_apply(self.by, f))
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyagg"><a class="header" href="#polarseagerframegroupbyagg"><code>polars.eager.frame.GroupBy.agg</code></a></h3>
+<pre><code class="language-python">agg(column_to_agg: Union[tp.List[Tuple[str, tp.List[str]]], Dict[str, Union[str, tp.List[str]]], tp.List[pl.Expr], pl.Expr],) -&gt; DataFrame:
+</code></pre>
+<p>Use multiple aggregations on columns. This can be combined with complete lazy API
+and is considered idiomatic polars.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>
+<p>[<code>column_to_agg</code>]: map column to aggregation functions.</p>
+<p>Examples:
+## use lazy API syntax (recommended)
+[col(&quot;foo&quot;).sum(), col(&quot;bar&quot;).min()]</p>
+<pre><code>  ## column name to aggregation with tuples:
+  [(&quot;foo&quot;, [&quot;sum&quot;, &quot;n_unique&quot;, &quot;min&quot;]),
+   (&quot;bar&quot;: [&quot;max&quot;])]
+
+  ## column name to aggregation with dict:
+  {&quot;foo&quot;: [&quot;sum&quot;, &quot;n_unique&quot;, &quot;min&quot;],
+  &quot;bar&quot;: &quot;max&quot; }
+</code></pre>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Result of groupby split apply operations.</p>
+<p><strong>Examples:</strong></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<h1 id="use-lazy-api"><a class="header" href="#use-lazy-api">use lazy API</a></h1>
+<p>(df.groupby([&quot;foo&quot;, &quot;bar])
+.agg([pl.sum(&quot;ham&quot;), col(&quot;spam&quot;).tail(4).sum()])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<h1 id="use-a-dict"><a class="header" href="#use-a-dict">use a dict</a></h1>
+<p>(df.groupby([&quot;foo&quot;, &quot;bar])
+.agg({&quot;spam&quot;: [&quot;sum&quot;, &quot;min&quot;})</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def agg(
+        self,
+        column_to_agg: Union[
+            tp.List[Tuple[str, tp.List[str]]],
+            Dict[str, Union[str, tp.List[str]]],
+            tp.List[&quot;pl.Expr&quot;],
+            &quot;pl.Expr&quot;,
+        ],
+    ) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Use multiple aggregations on columns. This can be combined with complete lazy API
+        and is considered idiomatic polars.
+
+        Parameters
+        ----------
+        column_to_agg
+            map column to aggregation functions.
+
+            Examples:
+                ## use lazy API syntax (recommended)
+                [col(&quot;foo&quot;).sum(), col(&quot;bar&quot;).min()]
+
+                ## column name to aggregation with tuples:
+                [(&quot;foo&quot;, [&quot;sum&quot;, &quot;n_unique&quot;, &quot;min&quot;]),
+                 (&quot;bar&quot;: [&quot;max&quot;])]
+
+                ## column name to aggregation with dict:
+                {&quot;foo&quot;: [&quot;sum&quot;, &quot;n_unique&quot;, &quot;min&quot;],
+                &quot;bar&quot;: &quot;max&quot; }
+
+        Returns
+        -------
+        Result of groupby split apply operations.
+
+
+        Examples
+        --------
+
+        &gt;&gt;&gt; # use lazy API
+        &gt;&gt;&gt; (df.groupby([&quot;foo&quot;, &quot;bar])
+        &gt;&gt;&gt; .agg([pl.sum(&quot;ham&quot;), col(&quot;spam&quot;).tail(4).sum()])
+
+        &gt;&gt;&gt; # use a dict
+        &gt;&gt;&gt; (df.groupby([&quot;foo&quot;, &quot;bar])
+        &gt;&gt;&gt; .agg({&quot;spam&quot;: [&quot;sum&quot;, &quot;min&quot;})
+
+        &quot;&quot;&quot;
+        if isinstance(column_to_agg, pl.Expr):
+            column_to_agg = [column_to_agg]
+        if isinstance(column_to_agg, dict):
+            column_to_agg = [
+                (column, [agg] if isinstance(agg, str) else agg)
+                for (column, agg) in column_to_agg.items()
+            ]
+        elif isinstance(column_to_agg, list):
+
+            if isinstance(column_to_agg[0], tuple):
+                column_to_agg = [  # type: ignore[misc]
+                    (column, [agg] if isinstance(agg, str) else agg)  # type: ignore[misc]
+                    for (column, agg) in column_to_agg
+                ]
+
+            elif isinstance(column_to_agg[0], pl.Expr):
+                return (
+                    wrap_df(self._df)
+                    .lazy()
+                    .groupby(self.by, maintain_order=self.maintain_order)
+                    .agg(column_to_agg)  # type: ignore[arg-type]
+                    .collect(no_optimization=True, string_cache=False)
+                )
+
+                pass
+            else:
+                raise ValueError(
+                    f&quot;argument: {column_to_agg} not understood, have you passed a list of expressions?&quot;
+                )
+        else:
+            raise ValueError(
+                f&quot;argument: {column_to_agg} not understood, have you passed a list of expressions?&quot;
+            )
+
+        if self.downsample:
+            return wrap_df(
+                self._df.downsample_agg(
+                    self.by, self.rule, self.downsample_n, column_to_agg
+                )
+            )
+
+        return wrap_df(self._df.groupby_agg(self.by, column_to_agg))
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyhead"><a class="header" href="#polarseagerframegroupbyhead"><code>polars.eager.frame.GroupBy.head</code></a></h3>
+<pre><code class="language-python">head(n: int) -&gt; DataFrame:
+</code></pre>
+<p>Return first n rows of each group.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>n</code>]: Number of values of the group to select</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>df = pl.DataFrame({
+&quot;letters&quot;: [&quot;c&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;, &quot;a&quot;, &quot;b&quot;],
+&quot;nrs&quot;: [1, 2, 3, 4, 5, 6]
+})
+df
+shape: (6, 2)
+╭─────────┬─────╮
+│ letters ┆ nrs │
+│ ---     ┆ --- │
+│ str     ┆ i64 │
+╞═════════╪═════╡
+│ &quot;c&quot;     ┆ 1   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;c&quot;     ┆ 2   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;a&quot;     ┆ 3   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;c&quot;     ┆ 4   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;a&quot;     ┆ 5   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;b&quot;     ┆ 6   │
+╰─────────┴─────╯
+(df.groupby(&quot;letters&quot;)
+.head(2)
+.sort(&quot;letters&quot;)
+)
+shape: (5, 2)
+╭─────────┬─────╮
+│ letters ┆ nrs │
+│ ---     ┆ --- │
+│ str     ┆ i64 │
+╞═════════╪═════╡
+│ &quot;a&quot;     ┆ 3   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;a&quot;     ┆ 5   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;b&quot;     ┆ 6   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;c&quot;     ┆ 1   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;c&quot;     ┆ 2   │
+╰─────────┴─────╯</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def head(self, n: int = 5) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Return first n rows of each group.
+
+        Parameters
+        ----------
+        n
+            Number of values of the group to select
+
+
+        Examples
+        --------
+
+        &gt;&gt;&gt; df = pl.DataFrame({
+        &gt;&gt;&gt;     &quot;letters&quot;: [&quot;c&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;, &quot;a&quot;, &quot;b&quot;],
+        &gt;&gt;&gt;     &quot;nrs&quot;: [1, 2, 3, 4, 5, 6]
+        &gt;&gt;&gt; })
+        &gt;&gt;&gt; df
+        shape: (6, 2)
+        ╭─────────┬─────╮
+        │ letters ┆ nrs │
+        │ ---     ┆ --- │
+        │ str     ┆ i64 │
+        ╞═════════╪═════╡
+        │ &quot;c&quot;     ┆ 1   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 2   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 3   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 4   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 5   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;b&quot;     ┆ 6   │
+        ╰─────────┴─────╯
+        &gt;&gt;&gt; (df.groupby(&quot;letters&quot;)
+        &gt;&gt;&gt;  .head(2)
+        &gt;&gt;&gt;  .sort(&quot;letters&quot;)
+        &gt;&gt;&gt; )
+        shape: (5, 2)
+        ╭─────────┬─────╮
+        │ letters ┆ nrs │
+        │ ---     ┆ --- │
+        │ str     ┆ i64 │
+        ╞═════════╪═════╡
+        │ &quot;a&quot;     ┆ 3   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 5   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;b&quot;     ┆ 6   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 1   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 2   │
+        ╰─────────┴─────╯
+
+        &quot;&quot;&quot;
+        return (
+            wrap_df(self._df)
+            .lazy()
+            .groupby(self.by, self.maintain_order)
+            .head(n)  # type: ignore[arg-type]
+            .collect(no_optimization=True, string_cache=False)
+        )
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbytail"><a class="header" href="#polarseagerframegroupbytail"><code>polars.eager.frame.GroupBy.tail</code></a></h3>
+<pre><code class="language-python">tail(n: int) -&gt; DataFrame:
+</code></pre>
+<p>Return last n rows of each group.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>n</code>]: Number of values of the group to select</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>df = pl.DataFrame({
+&quot;letters&quot;: [&quot;c&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;, &quot;a&quot;, &quot;b&quot;],
+&quot;nrs&quot;: [1, 2, 3, 4, 5, 6]
+})
+df
+shape: (6, 2)
+╭─────────┬─────╮
+│ letters ┆ nrs │
+│ ---     ┆ --- │
+│ str     ┆ i64 │
+╞═════════╪═════╡
+│ &quot;c&quot;     ┆ 1   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;c&quot;     ┆ 2   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;a&quot;     ┆ 3   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;c&quot;     ┆ 4   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;a&quot;     ┆ 5   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;b&quot;     ┆ 6   │
+╰─────────┴─────╯
+(df.groupby(&quot;letters&quot;)
+.tail(2)
+.sort(&quot;letters&quot;)
+)
+shape: (5, 2)
+╭─────────┬─────╮
+│ letters ┆ nrs │
+│ ---     ┆ --- │
+│ str     ┆ i64 │
+╞═════════╪═════╡
+│ &quot;a&quot;     ┆ 3   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;a&quot;     ┆ 5   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;b&quot;     ┆ 6   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;c&quot;     ┆ 2   │
+├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+│ &quot;c&quot;     ┆ 4   │
+╰─────────┴─────╯</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def tail(self, n: int = 5) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Return last n rows of each group.
+
+        Parameters
+        ----------
+        n
+            Number of values of the group to select
+
+        Examples
+        --------
+
+        &gt;&gt;&gt; df = pl.DataFrame({
+        &gt;&gt;&gt;     &quot;letters&quot;: [&quot;c&quot;, &quot;c&quot;, &quot;a&quot;, &quot;c&quot;, &quot;a&quot;, &quot;b&quot;],
+        &gt;&gt;&gt;     &quot;nrs&quot;: [1, 2, 3, 4, 5, 6]
+        &gt;&gt;&gt; })
+        &gt;&gt;&gt; df
+        shape: (6, 2)
+        ╭─────────┬─────╮
+        │ letters ┆ nrs │
+        │ ---     ┆ --- │
+        │ str     ┆ i64 │
+        ╞═════════╪═════╡
+        │ &quot;c&quot;     ┆ 1   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 2   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 3   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 4   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 5   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;b&quot;     ┆ 6   │
+        ╰─────────┴─────╯
+        &gt;&gt;&gt; (df.groupby(&quot;letters&quot;)
+        &gt;&gt;&gt;  .tail(2)
+        &gt;&gt;&gt;  .sort(&quot;letters&quot;)
+        &gt;&gt;&gt; )
+        shape: (5, 2)
+        ╭─────────┬─────╮
+        │ letters ┆ nrs │
+        │ ---     ┆ --- │
+        │ str     ┆ i64 │
+        ╞═════════╪═════╡
+        │ &quot;a&quot;     ┆ 3   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;a&quot;     ┆ 5   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;b&quot;     ┆ 6   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 2   │
+        ├╌╌╌╌╌╌╌╌╌┼╌╌╌╌╌┤
+        │ &quot;c&quot;     ┆ 4   │
+        ╰─────────┴─────╯
+
+        &quot;&quot;&quot;
+        return (
+            wrap_df(self._df)
+            .lazy()
+            .groupby(self.by, self.maintain_order)
+            .tail(n)  # type: ignore[arg-type]
+            .collect(no_optimization=True, string_cache=False)
+        )
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyselect"><a class="header" href="#polarseagerframegroupbyselect"><code>polars.eager.frame.GroupBy.select</code></a></h3>
+<pre><code class="language-python">select(columns: Union[str, tp.List[str]],) -&gt; GBSelection:
+</code></pre>
+<p>.. deprecated:: 0.8.16
+Use <code>groupby.agg(col(&quot;selection&quot;))</code> instead</p>
+<p>Select the columns that will be aggregated.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>columns</code>]: One or multiple columns.</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def select(self, columns: Union[str, tp.List[str]]) -&gt; &quot;GBSelection&quot;:
+        &quot;&quot;&quot;
+        .. deprecated:: 0.8.16
+            Use `groupby.agg(col(&quot;selection&quot;))` instead
+
+        Select the columns that will be aggregated.
+
+        Parameters
+        ----------
+        columns
+            One or multiple columns.
+        &quot;&quot;&quot;
+        if self.downsample:
+            raise ValueError(&quot;select not supported in downsample operation&quot;)
+        if isinstance(columns, str):
+            columns = [columns]
+        return GBSelection(self._df, self.by, columns)
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyselect_all"><a class="header" href="#polarseagerframegroupbyselect_all"><code>polars.eager.frame.GroupBy.select_all</code></a></h3>
+<pre><code class="language-python">select_all() -&gt; GBSelection:
+</code></pre>
+<p>.. deprecated:: 0.8.16
+Use <code>groupby.agg(col(&quot;*&quot;))</code> instead</p>
+<p>Select all columns for aggregation.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def select_all(self) -&gt; &quot;GBSelection&quot;:
+        &quot;&quot;&quot;
+        .. deprecated:: 0.8.16
+            Use `groupby.agg(col(&quot;*&quot;))` instead
+
+        Select all columns for aggregation.
+        &quot;&quot;&quot;
+        return GBSelection(
+            self._df, self.by, None, self.downsample, self.rule, self.downsample_n
+        )
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbypivot"><a class="header" href="#polarseagerframegroupbypivot"><code>polars.eager.frame.GroupBy.pivot</code></a></h3>
+<pre><code class="language-python">pivot(pivot_column: str, 
+    values_column: str,) -&gt; PivotOps:
+</code></pre>
+<p>Do a pivot operation based on the group key, a pivot column and an aggregation function on the values column.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>pivot_column</code>]: Column to pivot.</li>
+<li>[<code>values_column</code>]: Column that will be aggregated.</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def pivot(self, pivot_column: str, values_column: str) -&gt; &quot;PivotOps&quot;:
+        &quot;&quot;&quot;
+        Do a pivot operation based on the group key, a pivot column and an aggregation function on the values column.
+
+        Parameters
+        ----------
+        pivot_column
+            Column to pivot.
+        values_column
+            Column that will be aggregated.
+        &quot;&quot;&quot;
+        if self.downsample:
+            raise ValueError(&quot;Pivot not supported in downsample operation.&quot;)
+        return PivotOps(self._df, self.by, pivot_column, values_column)
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyfirst"><a class="header" href="#polarseagerframegroupbyfirst"><code>polars.eager.frame.GroupBy.first</code></a></h3>
+<pre><code class="language-python">first() -&gt; DataFrame:
+</code></pre>
+<p>Aggregate the first values in the group.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def first(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Aggregate the first values in the group.
+        &quot;&quot;&quot;
+        return self.select_all().first()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbylast"><a class="header" href="#polarseagerframegroupbylast"><code>polars.eager.frame.GroupBy.last</code></a></h3>
+<pre><code class="language-python">last() -&gt; DataFrame:
+</code></pre>
+<p>Aggregate the last values in the group.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def last(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Aggregate the last values in the group.
+        &quot;&quot;&quot;
+        return self.select_all().last()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbysum"><a class="header" href="#polarseagerframegroupbysum"><code>polars.eager.frame.GroupBy.sum</code></a></h3>
+<pre><code class="language-python">sum() -&gt; DataFrame:
+</code></pre>
+<p>Reduce the groups to the sum.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def sum(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Reduce the groups to the sum.
+        &quot;&quot;&quot;
+        return self.select_all().sum()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbymin"><a class="header" href="#polarseagerframegroupbymin"><code>polars.eager.frame.GroupBy.min</code></a></h3>
+<pre><code class="language-python">min() -&gt; DataFrame:
+</code></pre>
+<p>Reduce the groups to the minimal value.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def min(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Reduce the groups to the minimal value.
+        &quot;&quot;&quot;
+        return self.select_all().min()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbymax"><a class="header" href="#polarseagerframegroupbymax"><code>polars.eager.frame.GroupBy.max</code></a></h3>
+<pre><code class="language-python">max() -&gt; DataFrame:
+</code></pre>
+<p>Reduce the groups to the maximal value.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def max(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Reduce the groups to the maximal value.
+        &quot;&quot;&quot;
+        return self.select_all().max()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbycount"><a class="header" href="#polarseagerframegroupbycount"><code>polars.eager.frame.GroupBy.count</code></a></h3>
+<pre><code class="language-python">count() -&gt; DataFrame:
+</code></pre>
+<p>Count the number of values in each group.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def count(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Count the number of values in each group.
+        &quot;&quot;&quot;
+        return self.select_all().count()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbymean"><a class="header" href="#polarseagerframegroupbymean"><code>polars.eager.frame.GroupBy.mean</code></a></h3>
+<pre><code class="language-python">mean() -&gt; DataFrame:
+</code></pre>
+<p>Reduce the groups to the mean values.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def mean(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Reduce the groups to the mean values.
+        &quot;&quot;&quot;
+        return self.select_all().mean()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyn_unique"><a class="header" href="#polarseagerframegroupbyn_unique"><code>polars.eager.frame.GroupBy.n_unique</code></a></h3>
+<pre><code class="language-python">n_unique() -&gt; DataFrame:
+</code></pre>
+<p>Count the unique values per group.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def n_unique(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Count the unique values per group.
+        &quot;&quot;&quot;
+        return self.select_all().n_unique()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyquantile"><a class="header" href="#polarseagerframegroupbyquantile"><code>polars.eager.frame.GroupBy.quantile</code></a></h3>
+<pre><code class="language-python">quantile(quantile: float) -&gt; DataFrame:
+</code></pre>
+<p>Compute the quantile per group.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def quantile(self, quantile: float) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Compute the quantile per group.
+        &quot;&quot;&quot;
+        return self.select_all().quantile(quantile)
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbymedian"><a class="header" href="#polarseagerframegroupbymedian"><code>polars.eager.frame.GroupBy.median</code></a></h3>
+<pre><code class="language-python">median() -&gt; DataFrame:
+</code></pre>
+<p>Return the median per group.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def median(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Return the median per group.
+        &quot;&quot;&quot;
+        return self.select_all().median()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerframegroupbyagg_list"><a class="header" href="#polarseagerframegroupbyagg_list"><code>polars.eager.frame.GroupBy.agg_list</code></a></h3>
+<pre><code class="language-python">agg_list() -&gt; DataFrame:
+</code></pre>
+<p>Aggregate the groups into Series.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def agg_list(self) -&gt; DataFrame:
+        &quot;&quot;&quot;
+        Aggregate the groups into Series.
+        &quot;&quot;&quot;
+        return self.select_all().agg_list()
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../../polars/eager/frame/DataFrame.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../../polars/eager/frame/PivotOps.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../../polars/eager/frame/DataFrame.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../../polars/eager/frame/PivotOps.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../../../theme/js/index.js"></script>
+        
+
+        
+
+    </body>
+</html>

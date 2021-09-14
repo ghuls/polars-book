@@ -1,0 +1,787 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js ayu">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>StringNameSpace - Polars - Python Reference Guide</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../../favicon.png">
+        
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../../theme/css/style.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../../polars.html">polars</a></li><li class="chapter-item "><a href="../../../polars/cfg.html">cfg</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/cfg/Config.html">Config</a></li></ol></li><li class="chapter-item "><a href="../../../polars/convert.html">convert</a></li><li class="chapter-item "><a href="../../../polars/datatypes.html">datatypes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/datatypes/DataType.html">DataType</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Int8.html">Int8</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Int16.html">Int16</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Int32.html">Int32</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Int64.html">Int64</a></li><li class="chapter-item "><a href="../../../polars/datatypes/UInt8.html">UInt8</a></li><li class="chapter-item "><a href="../../../polars/datatypes/UInt16.html">UInt16</a></li><li class="chapter-item "><a href="../../../polars/datatypes/UInt32.html">UInt32</a></li><li class="chapter-item "><a href="../../../polars/datatypes/UInt64.html">UInt64</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Float32.html">Float32</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Float64.html">Float64</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Boolean.html">Boolean</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Utf8.html">Utf8</a></li><li class="chapter-item "><a href="../../../polars/datatypes/List.html">List</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Date32.html">Date32</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Date64.html">Date64</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Time32Millisecond.html">Time32Millisecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Time32Second.html">Time32Second</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Time64Nanosecond.html">Time64Nanosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Time64Microsecond.html">Time64Microsecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/DurationNanosecond.html">DurationNanosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/DurationMicrosecond.html">DurationMicrosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/DurationMillisecond.html">DurationMillisecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/DurationSecond.html">DurationSecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/TimestampNanosecond.html">TimestampNanosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/TimestampMicrosecond.html">TimestampMicrosecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/TimestampMillisecond.html">TimestampMillisecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/TimestampSecond.html">TimestampSecond</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Object.html">Object</a></li><li class="chapter-item "><a href="../../../polars/datatypes/Categorical.html">Categorical</a></li></ol></li><li class="chapter-item expanded "><a href="../../../polars/eager.html">eager</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/eager/frame.html">frame</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/eager/frame/DataFrame.html">DataFrame</a></li><li class="chapter-item "><a href="../../../polars/eager/frame/GroupBy.html">GroupBy</a></li><li class="chapter-item "><a href="../../../polars/eager/frame/PivotOps.html">PivotOps</a></li><li class="chapter-item "><a href="../../../polars/eager/frame/GBSelection.html">GBSelection</a></li></ol></li><li class="chapter-item expanded "><a href="../../../polars/eager/series.html">series</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/eager/series/Series.html">Series</a></li><li class="chapter-item expanded "><a href="../../../polars/eager/series/StringNameSpace.html" class="active">StringNameSpace</a></li><li class="chapter-item "><a href="../../../polars/eager/series/ListNameSpace.html">ListNameSpace</a></li><li class="chapter-item "><a href="../../../polars/eager/series/DateTimeNameSpace.html">DateTimeNameSpace</a></li><li class="chapter-item "><a href="../../../polars/eager/series/SeriesIter.html">SeriesIter</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../polars/functions.html">functions</a></li><li class="chapter-item "><a href="../../../polars/internals.html">internals</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/internals/construction.html">construction</a></li></ol></li><li class="chapter-item "><a href="../../../polars/io.html">io</a></li><li class="chapter-item "><a href="../../../polars/lazy.html">lazy</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/lazy/expr.html">expr</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/lazy/expr/Expr.html">Expr</a></li><li class="chapter-item "><a href="../../../polars/lazy/expr/ExprListNameSpace.html">ExprListNameSpace</a></li><li class="chapter-item "><a href="../../../polars/lazy/expr/ExprStringNameSpace.html">ExprStringNameSpace</a></li><li class="chapter-item "><a href="../../../polars/lazy/expr/ExprDateTimeNameSpace.html">ExprDateTimeNameSpace</a></li></ol></li><li class="chapter-item "><a href="../../../polars/lazy/frame.html">frame</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/lazy/frame/LazyFrame.html">LazyFrame</a></li><li class="chapter-item "><a href="../../../polars/lazy/frame/LazyGroupBy.html">LazyGroupBy</a></li></ol></li><li class="chapter-item "><a href="../../../polars/lazy/functions.html">functions</a></li><li class="chapter-item "><a href="../../../polars/lazy/whenthen.html">whenthen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/lazy/whenthen/WhenThenThen.html">WhenThenThen</a></li><li class="chapter-item "><a href="../../../polars/lazy/whenthen/WhenThen.html">WhenThen</a></li><li class="chapter-item "><a href="../../../polars/lazy/whenthen/When.html">When</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../polars/string_cache.html">string_cache</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../polars/string_cache/StringCache.html">StringCache</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Polars - Python Reference Guide</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="polarseagerseriesstringnamespace"><a class="header" href="#polarseagerseriesstringnamespace"><code>polars.eager.series.StringNameSpace</code></a></h1>
+<p>Series.str namespace.</p>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><a href="#polarseagerseriesstringnamespacestrptime"><code>strptime()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespacelengths"><code>lengths()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespacecontains"><code>contains()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespacejson_path_match"><code>json_path_match()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespacereplace"><code>replace()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespacereplace_all"><code>replace_all()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespaceto_lowercase"><code>to_lowercase()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespaceto_uppercase"><code>to_uppercase()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespacerstrip"><code>rstrip()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespacelstrip"><code>lstrip()</code></a></li>
+<li><a href="#polarseagerseriesstringnamespaceslice"><code>slice()</code></a></li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">class StringNameSpace:
+    &quot;&quot;&quot;
+    Series.str namespace.
+    &quot;&quot;&quot;
+
+    def __init__(self, series: &quot;Series&quot;):
+        self._s = series._s
+
+    def strptime(self, datatype: DataType, fmt: Optional[str] = None) -&gt; Series:
+        &quot;&quot;&quot;
+        Parse a Series of dtype Utf8 to a Date32/Date64 Series.
+
+        Parameters
+        ----------
+        datatype
+            Date32 or Date64.
+        fmt
+            formatting syntax. [Read more](https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html)
+
+        Returns
+        -------
+        A Date32/ Date64 Series
+        &quot;&quot;&quot;
+        if datatype == Date32:
+            return wrap_s(self._s.str_parse_date32(fmt))
+        if datatype == Date64:
+            return wrap_s(self._s.str_parse_date64(fmt))
+        raise NotImplementedError
+
+    def lengths(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Get length of the string values in the Series.
+
+        Returns
+        -------
+        Series[u32]
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_lengths())
+
+    def contains(self, pattern: str) -&gt; Series:
+        &quot;&quot;&quot;
+        Check if strings in Series contain regex pattern.
+
+        Parameters
+        ----------
+        pattern
+            A valid regex pattern.
+
+        Returns
+        -------
+        Boolean mask
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_contains(pattern))
+
+    def json_path_match(self, json_path: str) -&gt; Series:
+        &quot;&quot;&quot;
+        Extract the first match of json string with provided JSONPath expression.
+        Throw errors if encounter invalid json strings.
+        All return value will be casted to Utf8 regardless of the original value.
+        Documentation on JSONPath standard: https://goessner.net/articles/JsonPath/
+
+        Parameters
+        ----------
+        json_path
+            A valid JSON path query string
+
+        Returns
+        -------
+        Utf8 array. Contain null if original value is null or the json_path return nothing.
+
+        Examples
+        --------
+
+        &gt;&gt;&gt; df = pl.DataFrame({
+        'json_val':['{&quot;a&quot;:&quot;1&quot;}',None,'{&quot;a&quot;:2}', '{&quot;a&quot;:2.1}', '{&quot;a&quot;:true}'
+        })
+        &gt;&gt;&gt; df.select(pl.col('json_val').str.json_path_match('$.a')
+        shape: (5,)
+        Series: 'json_val' [str]
+        [
+            &quot;1&quot;
+            null
+            &quot;2&quot;
+            &quot;2.1&quot;
+            &quot;true&quot;
+        ]
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_json_path_match(json_path))
+
+    def replace(self, pattern: str, value: str) -&gt; Series:
+        &quot;&quot;&quot;
+        Replace first regex match with a string value.
+
+        Parameters
+        ----------
+        pattern
+            A valid regex pattern.
+        value
+            Substring to replace.
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_replace(pattern, value))
+
+    def replace_all(self, pattern: str, value: str) -&gt; Series:
+        &quot;&quot;&quot;
+        Replace all regex matches with a string value.
+
+        Parameters
+        ----------
+        pattern
+            A valid regex pattern.
+        value
+            Substring to replace.
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_replace_all(pattern, value))
+
+    def to_lowercase(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Modify the strings to their lowercase equivalent.
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_to_lowercase())
+
+    def to_uppercase(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Modify the strings to their uppercase equivalent.
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_to_uppercase())
+
+    def rstrip(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Remove trailing whitespace.
+        &quot;&quot;&quot;
+        return self.replace(r&quot;[ \t]+$&quot;, &quot;&quot;)
+
+    def lstrip(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Remove leading whitespace.
+        &quot;&quot;&quot;
+        return self.replace(r&quot;^\s*&quot;, &quot;&quot;)
+
+    def slice(self, start: int, length: Optional[int] = None) -&gt; Series:
+        &quot;&quot;&quot;
+        Create subslices of the string values of a Utf8 Series.
+
+        Parameters
+        ----------
+        start
+            Start of the slice (negative indexing may be used).
+        length
+            Optional length of the slice.
+
+        Returns
+        -------
+        Series of Utf8 type
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_slice(start, length))
+</code></pre>
+<p>
+</details>
+</raw></p>
+<h2 id="constructor"><a class="header" href="#constructor">Constructor</a></h2>
+<pre><code class="language-python">StringNameSpace(series: Series)
+</code></pre>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def __init__(self, series: &quot;Series&quot;):
+        self._s = series._s
+</code></pre>
+<p>
+</details>
+</raw></p>
+<h2 id="methods"><a class="header" href="#methods">Methods</a></h2>
+<p><div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespacestrptime"><a class="header" href="#polarseagerseriesstringnamespacestrptime"><code>polars.eager.series.StringNameSpace.strptime</code></a></h3>
+<pre><code class="language-python">strptime(datatype: DataType, 
+    fmt: Optionalstr,) -&gt; Series:
+</code></pre>
+<p>Parse a Series of dtype Utf8 to a Date32/Date64 Series.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>datatype</code>]: Date32 or Date64.</li>
+<li>[<code>fmt</code>]: formatting syntax. <a href="https:/docs.rs/chrono/0.4.19/chrono/format/strftime/index.html">Read more</a></li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>A Date32/ Date64 Series</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def strptime(self, datatype: DataType, fmt: Optional[str] = None) -&gt; Series:
+        &quot;&quot;&quot;
+        Parse a Series of dtype Utf8 to a Date32/Date64 Series.
+
+        Parameters
+        ----------
+        datatype
+            Date32 or Date64.
+        fmt
+            formatting syntax. [Read more](https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html)
+
+        Returns
+        -------
+        A Date32/ Date64 Series
+        &quot;&quot;&quot;
+        if datatype == Date32:
+            return wrap_s(self._s.str_parse_date32(fmt))
+        if datatype == Date64:
+            return wrap_s(self._s.str_parse_date64(fmt))
+        raise NotImplementedError
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespacelengths"><a class="header" href="#polarseagerseriesstringnamespacelengths"><code>polars.eager.series.StringNameSpace.lengths</code></a></h3>
+<pre><code class="language-python">lengths() -&gt; Series:
+</code></pre>
+<p>Get length of the string values in the Series.</p>
+<p><strong>Returns:</strong></p>
+<p>Series[u32]</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def lengths(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Get length of the string values in the Series.
+
+        Returns
+        -------
+        Series[u32]
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_lengths())
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespacecontains"><a class="header" href="#polarseagerseriesstringnamespacecontains"><code>polars.eager.series.StringNameSpace.contains</code></a></h3>
+<pre><code class="language-python">contains(pattern: str) -&gt; Series:
+</code></pre>
+<p>Check if strings in Series contain regex pattern.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>pattern</code>]: A valid regex pattern.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Boolean mask</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def contains(self, pattern: str) -&gt; Series:
+        &quot;&quot;&quot;
+        Check if strings in Series contain regex pattern.
+
+        Parameters
+        ----------
+        pattern
+            A valid regex pattern.
+
+        Returns
+        -------
+        Boolean mask
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_contains(pattern))
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespacejson_path_match"><a class="header" href="#polarseagerseriesstringnamespacejson_path_match"><code>polars.eager.series.StringNameSpace.json_path_match</code></a></h3>
+<pre><code class="language-python">json_path_match(json_path: str) -&gt; Series:
+</code></pre>
+<p>Extract the first match of json string with provided JSONPath expression.
+Throw errors if encounter invalid json strings.
+All return value will be casted to Utf8 regardless of the original value.
+Documentation on JSONPath standard: https:/goessner.net/articles/JsonPath/</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>json_path</code>]: A valid JSON path query string</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Utf8 array. Contain null if original value is null or the json_path return nothing.</p>
+<p><strong>Examples:</strong></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>df = pl.DataFrame({
+'json_val':['{&quot;a&quot;:&quot;1&quot;}',None,'{&quot;a&quot;:2}', '{&quot;a&quot;:2.1}', '{&quot;a&quot;:true}'
+})
+df.select(pl.col('json_val').str.json_path_match('$.a')
+shape: (5,)
+Series: 'json_val' [str]
+[
+&quot;1&quot;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li>&quot;true&quot;
+]</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def json_path_match(self, json_path: str) -&gt; Series:
+        &quot;&quot;&quot;
+        Extract the first match of json string with provided JSONPath expression.
+        Throw errors if encounter invalid json strings.
+        All return value will be casted to Utf8 regardless of the original value.
+        Documentation on JSONPath standard: https://goessner.net/articles/JsonPath/
+
+        Parameters
+        ----------
+        json_path
+            A valid JSON path query string
+
+        Returns
+        -------
+        Utf8 array. Contain null if original value is null or the json_path return nothing.
+
+        Examples
+        --------
+
+        &gt;&gt;&gt; df = pl.DataFrame({
+        'json_val':['{&quot;a&quot;:&quot;1&quot;}',None,'{&quot;a&quot;:2}', '{&quot;a&quot;:2.1}', '{&quot;a&quot;:true}'
+        })
+        &gt;&gt;&gt; df.select(pl.col('json_val').str.json_path_match('$.a')
+        shape: (5,)
+        Series: 'json_val' [str]
+        [
+            &quot;1&quot;
+            null
+            &quot;2&quot;
+            &quot;2.1&quot;
+            &quot;true&quot;
+        ]
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_json_path_match(json_path))
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespacereplace"><a class="header" href="#polarseagerseriesstringnamespacereplace"><code>polars.eager.series.StringNameSpace.replace</code></a></h3>
+<pre><code class="language-python">replace(pattern: str, value: str) -&gt; Series:
+</code></pre>
+<p>Replace first regex match with a string value.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>pattern</code>]: A valid regex pattern.</li>
+<li>[<code>value</code>]: Substring to replace.</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def replace(self, pattern: str, value: str) -&gt; Series:
+        &quot;&quot;&quot;
+        Replace first regex match with a string value.
+
+        Parameters
+        ----------
+        pattern
+            A valid regex pattern.
+        value
+            Substring to replace.
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_replace(pattern, value))
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespacereplace_all"><a class="header" href="#polarseagerseriesstringnamespacereplace_all"><code>polars.eager.series.StringNameSpace.replace_all</code></a></h3>
+<pre><code class="language-python">replace_all(pattern: str, value: str) -&gt; Series:
+</code></pre>
+<p>Replace all regex matches with a string value.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>pattern</code>]: A valid regex pattern.</li>
+<li>[<code>value</code>]: Substring to replace.</li>
+</ul>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def replace_all(self, pattern: str, value: str) -&gt; Series:
+        &quot;&quot;&quot;
+        Replace all regex matches with a string value.
+
+        Parameters
+        ----------
+        pattern
+            A valid regex pattern.
+        value
+            Substring to replace.
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_replace_all(pattern, value))
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespaceto_lowercase"><a class="header" href="#polarseagerseriesstringnamespaceto_lowercase"><code>polars.eager.series.StringNameSpace.to_lowercase</code></a></h3>
+<pre><code class="language-python">to_lowercase() -&gt; Series:
+</code></pre>
+<p>Modify the strings to their lowercase equivalent.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def to_lowercase(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Modify the strings to their lowercase equivalent.
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_to_lowercase())
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespaceto_uppercase"><a class="header" href="#polarseagerseriesstringnamespaceto_uppercase"><code>polars.eager.series.StringNameSpace.to_uppercase</code></a></h3>
+<pre><code class="language-python">to_uppercase() -&gt; Series:
+</code></pre>
+<p>Modify the strings to their uppercase equivalent.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def to_uppercase(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Modify the strings to their uppercase equivalent.
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_to_uppercase())
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespacerstrip"><a class="header" href="#polarseagerseriesstringnamespacerstrip"><code>polars.eager.series.StringNameSpace.rstrip</code></a></h3>
+<pre><code class="language-python">rstrip() -&gt; Series:
+</code></pre>
+<p>Remove trailing whitespace.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def rstrip(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Remove trailing whitespace.
+        &quot;&quot;&quot;
+        return self.replace(r&quot;[ \t]+$&quot;, &quot;&quot;)
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespacelstrip"><a class="header" href="#polarseagerseriesstringnamespacelstrip"><code>polars.eager.series.StringNameSpace.lstrip</code></a></h3>
+<pre><code class="language-python">lstrip() -&gt; Series:
+</code></pre>
+<p>Remove leading whitespace.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def lstrip(self) -&gt; Series:
+        &quot;&quot;&quot;
+        Remove leading whitespace.
+        &quot;&quot;&quot;
+        return self.replace(r&quot;^\s*&quot;, &quot;&quot;)
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+<div class='function-wrap'></raw></p>
+<h3 id="polarseagerseriesstringnamespaceslice"><a class="header" href="#polarseagerseriesstringnamespaceslice"><code>polars.eager.series.StringNameSpace.slice</code></a></h3>
+<pre><code class="language-python">slice(start: int, length: Optionalint) -&gt; Series:
+</code></pre>
+<p>Create subslices of the string values of a Utf8 Series.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li>[<code>start</code>]: Start of the slice (negative indexing may be used).</li>
+<li>[<code>length</code>]: Optional length of the slice.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Series of Utf8 type</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def slice(self, start: int, length: Optional[int] = None) -&gt; Series:
+        &quot;&quot;&quot;
+        Create subslices of the string values of a Utf8 Series.
+
+        Parameters
+        ----------
+        start
+            Start of the slice (negative indexing may be used).
+        length
+            Optional length of the slice.
+
+        Returns
+        -------
+        Series of Utf8 type
+        &quot;&quot;&quot;
+        return wrap_s(self._s.str_slice(start, length))
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../../polars/eager/series/Series.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../../polars/eager/series/ListNameSpace.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../../polars/eager/series/Series.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../../polars/eager/series/ListNameSpace.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../../../theme/js/index.js"></script>
+        
+
+        
+
+    </body>
+</html>

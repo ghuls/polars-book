@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js ayu">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>StringCache - Polars - Python Reference Guide</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../theme/css/style.css">
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../polars.html">polars</a></li><li class="chapter-item "><a href="../../polars/cfg.html">cfg</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/cfg/Config.html">Config</a></li></ol></li><li class="chapter-item "><a href="../../polars/convert.html">convert</a></li><li class="chapter-item "><a href="../../polars/datatypes.html">datatypes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/datatypes/DataType.html">DataType</a></li><li class="chapter-item "><a href="../../polars/datatypes/Int8.html">Int8</a></li><li class="chapter-item "><a href="../../polars/datatypes/Int16.html">Int16</a></li><li class="chapter-item "><a href="../../polars/datatypes/Int32.html">Int32</a></li><li class="chapter-item "><a href="../../polars/datatypes/Int64.html">Int64</a></li><li class="chapter-item "><a href="../../polars/datatypes/UInt8.html">UInt8</a></li><li class="chapter-item "><a href="../../polars/datatypes/UInt16.html">UInt16</a></li><li class="chapter-item "><a href="../../polars/datatypes/UInt32.html">UInt32</a></li><li class="chapter-item "><a href="../../polars/datatypes/UInt64.html">UInt64</a></li><li class="chapter-item "><a href="../../polars/datatypes/Float32.html">Float32</a></li><li class="chapter-item "><a href="../../polars/datatypes/Float64.html">Float64</a></li><li class="chapter-item "><a href="../../polars/datatypes/Boolean.html">Boolean</a></li><li class="chapter-item "><a href="../../polars/datatypes/Utf8.html">Utf8</a></li><li class="chapter-item "><a href="../../polars/datatypes/List.html">List</a></li><li class="chapter-item "><a href="../../polars/datatypes/Date32.html">Date32</a></li><li class="chapter-item "><a href="../../polars/datatypes/Date64.html">Date64</a></li><li class="chapter-item "><a href="../../polars/datatypes/Time32Millisecond.html">Time32Millisecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/Time32Second.html">Time32Second</a></li><li class="chapter-item "><a href="../../polars/datatypes/Time64Nanosecond.html">Time64Nanosecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/Time64Microsecond.html">Time64Microsecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/DurationNanosecond.html">DurationNanosecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/DurationMicrosecond.html">DurationMicrosecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/DurationMillisecond.html">DurationMillisecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/DurationSecond.html">DurationSecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/TimestampNanosecond.html">TimestampNanosecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/TimestampMicrosecond.html">TimestampMicrosecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/TimestampMillisecond.html">TimestampMillisecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/TimestampSecond.html">TimestampSecond</a></li><li class="chapter-item "><a href="../../polars/datatypes/Object.html">Object</a></li><li class="chapter-item "><a href="../../polars/datatypes/Categorical.html">Categorical</a></li></ol></li><li class="chapter-item "><a href="../../polars/eager.html">eager</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/eager/frame.html">frame</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/eager/frame/DataFrame.html">DataFrame</a></li><li class="chapter-item "><a href="../../polars/eager/frame/GroupBy.html">GroupBy</a></li><li class="chapter-item "><a href="../../polars/eager/frame/PivotOps.html">PivotOps</a></li><li class="chapter-item "><a href="../../polars/eager/frame/GBSelection.html">GBSelection</a></li></ol></li><li class="chapter-item "><a href="../../polars/eager/series.html">series</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/eager/series/Series.html">Series</a></li><li class="chapter-item "><a href="../../polars/eager/series/StringNameSpace.html">StringNameSpace</a></li><li class="chapter-item "><a href="../../polars/eager/series/ListNameSpace.html">ListNameSpace</a></li><li class="chapter-item "><a href="../../polars/eager/series/DateTimeNameSpace.html">DateTimeNameSpace</a></li><li class="chapter-item "><a href="../../polars/eager/series/SeriesIter.html">SeriesIter</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../polars/functions.html">functions</a></li><li class="chapter-item "><a href="../../polars/internals.html">internals</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/internals/construction.html">construction</a></li></ol></li><li class="chapter-item "><a href="../../polars/io.html">io</a></li><li class="chapter-item "><a href="../../polars/lazy.html">lazy</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/lazy/expr.html">expr</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/lazy/expr/Expr.html">Expr</a></li><li class="chapter-item "><a href="../../polars/lazy/expr/ExprListNameSpace.html">ExprListNameSpace</a></li><li class="chapter-item "><a href="../../polars/lazy/expr/ExprStringNameSpace.html">ExprStringNameSpace</a></li><li class="chapter-item "><a href="../../polars/lazy/expr/ExprDateTimeNameSpace.html">ExprDateTimeNameSpace</a></li></ol></li><li class="chapter-item "><a href="../../polars/lazy/frame.html">frame</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/lazy/frame/LazyFrame.html">LazyFrame</a></li><li class="chapter-item "><a href="../../polars/lazy/frame/LazyGroupBy.html">LazyGroupBy</a></li></ol></li><li class="chapter-item "><a href="../../polars/lazy/functions.html">functions</a></li><li class="chapter-item "><a href="../../polars/lazy/whenthen.html">whenthen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../polars/lazy/whenthen/WhenThenThen.html">WhenThenThen</a></li><li class="chapter-item "><a href="../../polars/lazy/whenthen/WhenThen.html">WhenThen</a></li><li class="chapter-item "><a href="../../polars/lazy/whenthen/When.html">When</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../polars/string_cache.html">string_cache</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../polars/string_cache/StringCache.html" class="active">StringCache</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Polars - Python Reference Guide</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="polarsstring_cachestringcache"><a class="header" href="#polarsstring_cachestringcache"><code>polars.string_cache.StringCache</code></a></h1>
+<p>Context manager that allows data sources to share the same categorical features.
+This will temporarily cache the string categories until the context manager is finished.</p>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">class StringCache:
+    &quot;&quot;&quot;
+    Context manager that allows data sources to share the same categorical features.
+    This will temporarily cache the string categories until the context manager is finished.
+    &quot;&quot;&quot;
+
+    def __init__(self) -&gt; None:
+        pass
+
+    def __enter__(self) -&gt; &quot;StringCache&quot;:
+        pytoggle_string_cache(True)
+        return self
+
+    def __exit__(
+        self,
+        exc_type: Optional[Type[BaseException]],
+        exc_val: Optional[BaseException],
+        exc_tb: Optional[TracebackType],
+    ) -&gt; None:
+        pytoggle_string_cache(False)
+</code></pre>
+<p>
+</details>
+</raw></p>
+<h2 id="constructor"><a class="header" href="#constructor">Constructor</a></h2>
+<pre><code class="language-python">StringCache()
+</code></pre>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">    def __init__(self) -&gt; None:
+        pass
+</code></pre>
+<p>
+</details>
+</raw></p>
+<h2 id="functions"><a class="header" href="#functions">Functions</a></h2>
+<p><div class='function-wrap'></raw></p>
+<h3 id="polarsutilscoerce_arrow"><a class="header" href="#polarsutilscoerce_arrow"><code>polars.utils.coerce_arrow</code></a></h3>
+<pre><code class="language-python">coerce_arrow(array: pa.Array) -&gt; pa.Array:
+</code></pre>
+<p>
+<details>
+  <summary style="text-align:right">source</summary>
+</raw></p>
+<pre><code class="language-python">def coerce_arrow(array: pa.Array) -&gt; pa.Array:
+    # also coerces timezone to naive representation
+    # units are accounted for by pyarrow
+    if &quot;timestamp&quot; in str(array.type):
+        warnings.warn(
+            &quot;Conversion of (potentially) timezone aware to naive datetimes. TZ information may be lost&quot;,
+        )
+        ts_ms = pa.compute.cast(array, pa.timestamp(&quot;ms&quot;), safe=False)
+        ms = pa.compute.cast(ts_ms, pa.int64())
+        del ts_ms
+        array = pa.compute.cast(ms, pa.date64())
+        del ms
+    # note: Decimal256 could not be cast to float
+    elif isinstance(array.type, pa.Decimal128Type):
+        array = pa.compute.cast(array, pa.float64())
+
+    # simplest solution is to cast to (large)-string arrays
+    # this is copy and expensive
+    elif isinstance(array.type, pa.DictionaryType):
+        if pa.types.is_string(array.type.value_type):
+            array = pa.compute.cast(array, pa.large_utf8())
+        else:
+            raise ValueError(
+                &quot;polars does not support dictionary encoded types other than strings&quot;
+            )
+
+    if hasattr(array, &quot;num_chunks&quot;) and array.num_chunks &gt; 1:
+        # we have to coerce before combining chunks, because pyarrow panics if
+        # offsets overflow
+        if pa.types.is_string(array.type):
+            array = pa.compute.cast(array, pa.large_utf8())
+        elif pa.types.is_list(array.type):
+            # pyarrow does not seem to support casting from list to largelist
+            # so we use convert to large list ourselves and do the re-alloc on polars/arrow side
+            chunks = []
+            for arr in array.iterchunks():
+                chunks.append(pl.from_arrow(arr).to_arrow())
+            array = pa.chunked_array(chunks)
+
+        array = array.combine_chunks()
+    return array
+</code></pre>
+<p>
+</details>
+</raw></p>
+<p></div></raw>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../polars/string_cache.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../polars/string_cache.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        <script type="text/javascript" src="../../theme/js/index.js"></script>
+        
+
+        
+
+    </body>
+</html>
